@@ -14,10 +14,11 @@
 
   & picture {
     align-items: center;
-    width: 65%;
-    //border: 1px solid #000;
+    width: 220px;
+   //border: 1px solid #000;
     margin: 20px auto;
     & img {
+      //box-shadow: 0 0 5px #000;
       border-radius: 15px;
     }
   }
