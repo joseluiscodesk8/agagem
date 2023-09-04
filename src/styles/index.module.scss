@@ -1,0 +1,15 @@
+.nav_agagem {
+  border: 1px solid;
+  & ul {
+    display: flex;
+    justify-content: space-around;
+    list-style: none;
+  }
+}
+
+.pack {
+  background: #1416;
+  position: absolute;
+  margin:  200px auto;
+}
+
