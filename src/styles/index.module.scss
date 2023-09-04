@@ -14,11 +14,17 @@
 
   & picture {
     align-items: center;
-    width: 220px;
+    width: 80%;
+    height: 280px;
+    max-width: 350px;
+    //overflow: hidden;
    //border: 1px solid #000;
     margin: 20px auto;
     & img {
-      //box-shadow: 0 0 5px #000;
+      width: 95%;
+      height: 280px;
+      transform: translate(10px);
+      box-shadow: 0 0 10px #000, 0 0 5px #000000;
       border-radius: 15px;
     }
   }
