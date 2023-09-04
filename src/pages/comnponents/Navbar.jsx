@@ -7,6 +7,7 @@ const Navbar = () => {
         <>
             <nav className={styles.nav_agagem}>
                 <ul>
+                <li><Link href="/">Inicio</Link></li>
                     <li><Link href="/Bisuteria">Bisuteria</Link></li>
                     <li><Link href="/Accesorios">Accesorios</Link></li>
                 </ul>
