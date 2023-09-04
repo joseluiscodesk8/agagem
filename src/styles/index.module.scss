@@ -8,8 +8,20 @@
 }
 
 .pack {
-  background: #1416;
+  width: 100%;
   position: absolute;
   margin:  200px auto;
+
+  & picture {
+    align-items: center;
+    width: 65%;
+    //border: 1px solid #000;
+    margin: 20px auto;
+    & img {
+      border-radius: 15px;
+    }
+  }
 }
+
+
 
