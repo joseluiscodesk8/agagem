@@ -1,8 +1,9 @@
 import Image from "next/image";
 import { Swiper, SwiperSlide } from "swiper/react";
-import "swiper/css";
-import "swiper/css/pagination";
-import { Navigation } from "swiper/modules";
+import "swiper/scss";
+import "swiper/scss/pagination";
+import "swiper/scss/effect-coverflow"
+import { EffectCoverflow, Navigation } from "swiper/modules";
 import styles from "../styles/index.module.scss";
 
 const Accesorios = () => {
@@ -11,10 +12,10 @@ const Accesorios = () => {
       <div className={styles.pack}>
         <picture>
         <Swiper
-          effect={"slide"} // Cambia el efecto a "slide"
+          effect={"coverflow"} // Cambia el efecto a "slide"
           grabCursor={true}
           navigation={true} // Habilita la navegación
-          modules={[Navigation]} // Agrega el módulo de navegación
+          modules={[Navigation, EffectCoverflow]} // Agrega el módulo de navegación
           autoplay={{ delay: 2000, disableOnInteraction: true }}
           freeMode={true}
           className={styles.swiper}
