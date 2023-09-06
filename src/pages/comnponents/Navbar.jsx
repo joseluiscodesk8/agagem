@@ -9,9 +9,9 @@ const Navbar = () => {
         "Pulseras duo",
         "Pulsera set x3",
         "Topos",
-        "Anillos",
         "Candongas",
         "Tobilleras",
+        "Anillos",
         "Cadenas",
     ];
   const [visibleItems, setVisibleItems] = useState(1);
