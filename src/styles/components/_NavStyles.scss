@@ -16,14 +16,14 @@
         transform: translateY(0); 
         width: 50%; 
         height: 100%; 
-        overflow: hidden;
-        //border: 1px solid; 
-    
-        & ul {   
+        overflow: hidden;    
+        & ul {
+            display: flex;
+            flex-direction: column; 
             & li {
                 display: grid;
                 place-content: center;
-                padding: 10px;
+                height: 40px;
                 border-radius: 5px;
                 border: 1px solid #fcebdd ;
                 box-shadow: inset 0 0 15px #e2b795;

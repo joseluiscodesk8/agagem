@@ -5,9 +5,9 @@ import styles from "../../styles/index.module.scss";
 
 const Navbar = () => {
     const menuItems = [
-        "Recina",
+        "Resina",
         "Pulseras duo",
-        "Pusera set x3",
+        "Pulsera set x3",
         "Topos",
         "Anillos",
         "Candongas",
@@ -31,7 +31,7 @@ const Navbar = () => {
         <button className={styles.navArrow} onClick={() => handleScroll("up")}><FiChevronLeft />
         </button>
         <nav className={styles.nav_agagem}>
-            <ul style={{ transform: `translateY(-${(visibleItems - 1) * 40}px)`, transition: "transform 0.3s ease-in-out"}}>
+            <ul style={{ transform: `translateY(-${(visibleItems - 1) * 40}px)`, transition: "transform 0.4s ease-in-out"}}>
               {menuItems.map((item, index) => (
                 <li key={index}>
                     <Link href={`/${item.replace(" ", "-")}`}>{item}</Link>
