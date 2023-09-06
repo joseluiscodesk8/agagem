@@ -7,14 +7,15 @@ const Navbar = () => {
     const menuItems = [
         "Resina",
         "Pulseras_duo",
-        "Pulsera set x3",
+        "Pulsera_set_x3",
         "Topos",
         "Candongas",
         "Tobilleras",
         "Anillos",
         "Cadenas",
     ];
-  const [visibleItems, setVisibleItems] = useState(1);
+    
+    const [visibleItems, setVisibleItems] = useState(1);
     const totalItems = menuItems.length;
 
   const handleScroll = (direction) => {

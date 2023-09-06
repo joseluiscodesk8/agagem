@@ -2,8 +2,7 @@ import Image from "next/image";
 import { Swiper, SwiperSlide } from "swiper/react";
 import "swiper/css";
 import "swiper/css/pagination";
-import "swiper/css/effect-coverflow";
-import { Navigation, EffectCoverflow } from "swiper/modules";
+import { Navigation } from "swiper/modules";
 import styles from "../styles/index.module.scss";
 
 const Resina = () => {
@@ -15,11 +14,10 @@ const Resina = () => {
     <>
       <div className={styles.pack}>
         <picture>
-          <Swiper
-            effect={"coverflow"} 
+          <Swiper 
             grabCursor={true}
             navigation={true} 
-            modules={[Navigation, EffectCoverflow]} // Agrega el módulo de navegación
+            modules={[Navigation]} // Agrega el módulo de navegación
             autoplay={{ delay: 2000, disableOnInteraction: true }}
             freeMode={true}
             className={styles.swiper}

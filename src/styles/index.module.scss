@@ -27,6 +27,33 @@
   }
 }
 
+.customSlider {
+  display: flex;
+  overflow-x: scroll;
+  scroll-snap-type: x mandatory;
+  width: 220px;
+  margin: 20px auto;
+  gap: 20px; /* Espacio entre elementos del carrusel */
+  
+}
+
+.sliderItem {
+  flex: 0 0 auto;
+  scroll-snap-align: center;
+  transform-origin: center center;
+  transition: transform 0.5s ease-in-out, filter 0.5s ease-in-out;
+  filter: brightness(0.7); /* Efecto de atenuación */
+  & img {
+    border-radius: 15px;
+    
+  }
+}
+
+.sliderItem:hover {
+  filter: brightness(1); /* Efecto de realce al pasar el mouse */
+  transform: scale(1.1); /* Efecto de agrandar al pasar el mouse */
+}
+
 
 
 
