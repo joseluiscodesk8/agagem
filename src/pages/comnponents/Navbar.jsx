@@ -6,7 +6,7 @@ import styles from "../../styles/index.module.scss";
 const Navbar = () => {
     const menuItems = [
         "Resina",
-        "Pulseras duo",
+        "Pulseras_duo",
         "Pulsera set x3",
         "Topos",
         "Candongas",

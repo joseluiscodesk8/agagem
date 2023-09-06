@@ -1,16 +1,12 @@
 import Image from "next/image";
 import { Swiper, SwiperSlide } from "swiper/react";
-import "swiper/css";
-import "swiper/css/pagination";
-import "swiper/css/effect-coverflow";
-import { Navigation, EffectCoverflow } from "swiper/modules";
+import "swiper/scss";
+import "swiper/scss/pagination";
+import "swiper/scss/effect-coverflow";
+import { EffectCoverflow, Navigation } from "swiper/modules";
 import styles from "../styles/index.module.scss";
 
-const Recina = () => {
-
-  let width = 220;
-  let height = 200;
-
+const Puleras_duo = () => {
   return (
     <>
       <div className={styles.pack}>
@@ -25,31 +21,28 @@ const Recina = () => {
             className={styles.swiper}
           >
             <SwiperSlide>
-              <Image src="/p1.jpg" width={width} height={height} alt="img" />
+              <Image src="/e1.jpg" width={200} height={200} alt="img" />
             </SwiperSlide>
             <SwiperSlide>
-              <Image src="/p2.jpg" width={width} height={height} alt="img" />
+              <Image src="/e3.jpg" width={200} height={200} alt="img" />
             </SwiperSlide>
             <SwiperSlide>
-              <Image src="/p3.jpg" width={width} height={height} alt="img" />
+              <Image src="/e2.jpg" width={200} height={200} alt="img" />
             </SwiperSlide>
             <SwiperSlide>
-              <Image src="/p4.jpg" width={width} height={height} alt="img" />
+              <Image src="/e4.jpg" width={200} height={200} alt="img" />
             </SwiperSlide>
             <SwiperSlide>
-              <Image src="/p5.jpg" width={width} height={height} alt="img" />
+              <Image src="/e5.jpg" width={200} height={200} alt="img" />
             </SwiperSlide>
             <SwiperSlide>
-              <Image src="/p6.jpg" width={width} height={height} alt="img" />
+              <Image src="/e6.jpg" width={200} height={200} alt="img" />
             </SwiperSlide>
             <SwiperSlide>
-              <Image src="/p7.jpg" width={width} height={height} alt="img" />
+              <Image src="/e7.jpg" width={200} height={200} alt="img" />
             </SwiperSlide>
             <SwiperSlide>
-              <Image src="/p8.jpg" width={width} height={height} alt="img" />
-            </SwiperSlide>
-            <SwiperSlide>
-              <Image src="/p9.jpg" width={width} height={height} alt="img" />
+              <Image src="/e8.jpg" width={200} height={200} alt="img" />
             </SwiperSlide>
           </Swiper>
         </picture>
@@ -58,4 +51,4 @@ const Recina = () => {
   );
 };
 
-export default Recina;
+export default Puleras_duo;
