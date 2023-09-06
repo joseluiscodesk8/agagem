@@ -6,17 +6,21 @@
   margin:  210px auto;
 
   & picture {
+    display: -webkit-flex;
+    display: flex;
+    -webkit-align-items: center;
     align-items: center;
     width: 80%;
     height: 280px;
     max-width: 350px;
-    //overflow: hidden;
-   //border: 1px solid #000;
+    /* overflow: hidden; */
+    /* border: 1px solid #000; */
     margin: 30px auto;
     & img {
       width: 95%;
       height: 280px;
       transform: translate(10px);
+      -webkit-box-shadow: 0 0 10px #000, 0 0 5px #000000;
       box-shadow: 0 0 10px #000, 0 0 5px #000000;
       border-radius: 15px;
     }
