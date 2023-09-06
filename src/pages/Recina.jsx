@@ -1,12 +1,12 @@
 import Image from "next/image";
 import { Swiper, SwiperSlide } from "swiper/react";
-import "swiper/scss";
-import "swiper/scss/pagination";
-import "swiper/scss/effect-coverflow";
+import "swiper/css";
+import "swiper/css/pagination";
+import "swiper/css/effect-coverflow";
 import { Navigation, EffectCoverflow } from "swiper/modules";
 import styles from "../styles/index.module.scss";
 
-const Bisuteria = () => {
+const Recina = () => {
 
   let width = 220;
   let height = 200;
@@ -58,4 +58,4 @@ const Bisuteria = () => {
   );
 };
 
-export default Bisuteria;
+export default Recina;
