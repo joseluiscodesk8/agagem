@@ -5,6 +5,7 @@ import styles from "../../styles/index.module.scss";
 
 const Navbar = () => {
     const menuItems = [
+        {label: "Inicio", path: "/"},
         "Resina",
         "Pulseras_duo",
         "Pulsera_set_x3",
@@ -35,7 +36,11 @@ const Navbar = () => {
             <ul style={{ transform: `translateY(-${(visibleItems - 1) * 40}px)`, transition: "transform 0.4s ease-in-out"}}>
               {menuItems.map((item, index) => (
                 <li key={index}>
-                    <Link href={`/${item.replace(" ", "-")}`}>{item}</Link>
+                    {typeof item === "object" ? (
+                      <Link href={item.path}>{item.label}</Link>
+                    ) : (
+                      <Link href={`/${item.replace(" ", "-")}`}>{item}</Link>
+                    )}
                 </li>
               ))}
             </ul>

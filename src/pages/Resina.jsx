@@ -35,21 +35,6 @@ const Resina = () => {
           <figure>
             <Image src="/p4.jpg" width={width} height={height} alt="img" />
           </figure>
-          <figure>
-            <Image src="/p5.jpg" width={width} height={height} alt="img" />
-          </figure>
-          <figure>
-            <Image src="/p6.jpg" width={width} height={height} alt="img" />
-          </figure>
-          <figure>
-            <Image src="/p7.jpg" width={width} height={height} alt="img" />
-          </figure>
-          <figure>
-            <Image src="/p8.jpg" width={width} height={height} alt="img" />
-          </figure>
-          <figure>
-            <Image src="/p9.jpg" width={width} height={height} alt="img" />
-          </figure>
         </Slider>
       </section>
     </>
