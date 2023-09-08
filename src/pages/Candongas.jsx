@@ -32,9 +32,17 @@ const swipePower = (offset, velocity) => Math.abs(offset) * velocity;
 
 const images = [
   "/candongas/c1.jpg",
+  "/candongas/c11.jpg",
+  "/candongas/c111.jpg",
   "/candongas/c2.jpg",
+  "/candongas/c22.jpg",
+  "/candongas/c222.jpg",
   "/candongas/c3.jpg",
+  "/candongas/c33.jpg",
+  "/candongas/c333.jpg",
   "/candongas/c4.jpg",
+  "/candongas/c44.jpg",
+  "/candongas/c444.jpg",
 
 ];
 
