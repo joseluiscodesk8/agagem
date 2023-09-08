@@ -5,20 +5,26 @@ import { FiChevronLeft, FiChevronRight } from "react-icons/fi";
 import styles from "../styles/index.module.scss";
 
 const variants = {
-  enter: (direction) => ({
-    x: direction > 0 ? 1000 : -1000,
+  enter: {
+    x: 200,
+    y: -200,
+    rotateZ: -45, // Rotación en el eje Z
     opacity: 0,
-  }),
+  },
   center: {
     zIndex: 1,
     x: 0,
+    y: 0,
+    rotateZ: 0,
     opacity: 1,
   },
-  exit: (direction) => ({
+  exit: {
     zIndex: 0,
-    x: direction < 0 ? 1000 : -1000,
+    x: -200,
+    y: 200,
+    rotateZ: 45,
     opacity: 0,
-  }),
+  },
 };
 
 const swipeConfidenceThreshold = 10000;
@@ -48,7 +54,7 @@ const pulseraDuo = () => {
 
   return (
     <>
-      <div className={styles.agagem}>
+      <section className={styles.agagem}>
       <buttons className="next" onClick={() => paginate(1)}>
         <FiChevronLeft />
       </buttons>
@@ -84,7 +90,7 @@ const pulseraDuo = () => {
       <buttons className="prev" onClick={() => paginate(-1)}>
         <FiChevronRight />
       </buttons>
-      </div>
+      </section>
     </>
   );
 };
