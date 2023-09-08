@@ -31,17 +31,14 @@ const swipeConfidenceThreshold = 10000;
 const swipePower = (offset, velocity) => Math.abs(offset) * velocity;
 
 const images = [
-  "/ejemplo/e1.jpg",
-  "/ejemplo/e2.jpg",
-  "/ejemplo/e3.jpg",
-  "/ejemplo/e4.jpg",
-  "/ejemplo/e5.jpg",
-  "/ejemplo/e6.jpg",
-  "/ejemplo/e7.jpg",
-  
+  "/candongas/c1.jpg",
+  "/candongas/c2.jpg",
+  "/candongas/c3.jpg",
+  "/candongas/c4.jpg",
+
 ];
 
-const pulseraDuo = () => {
+const candongas = () => {
   // eslint-disable-next-line react-hooks/rules-of-hooks
   const [[page, direction], setPage] = useState([0, 0]);
   const imageIndex = wrap(0, images.length, page);
@@ -93,5 +90,4 @@ const pulseraDuo = () => {
   );
 };
 
-export default pulseraDuo;
-
+export default candongas;
