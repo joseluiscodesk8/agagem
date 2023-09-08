@@ -31,22 +31,14 @@ const swipeConfidenceThreshold = 10000;
 const swipePower = (offset, velocity) => Math.abs(offset) * velocity;
 
 const images = [
-  "/candongas/c1.jpg",
-  "/candongas/c11.jpg",
-  "/candongas/c111.jpg",
-  "/candongas/c2.jpg",
-  "/candongas/c22.jpg",
-  "/candongas/c222.jpg",
-  "/candongas/c3.jpg",
-  "/candongas/c33.jpg",
-  "/candongas/c333.jpg",
-  "/candongas/c4.jpg",
-  "/candongas/c44.jpg",
-  "/candongas/c444.jpg",
+  "/tobilleras/t1.jpg",
+  "/tobilleras/t2.jpg",
+  "/tobilleras/t3.jpg",
+  "/tobilleras/t4.jpg",
 
 ];
 
-const candongas = () => {
+const anillos = () => {
   // eslint-disable-next-line react-hooks/rules-of-hooks
   const [[page, direction], setPage] = useState([0, 0]);
   const imageIndex = wrap(0, images.length, page);
@@ -98,4 +90,4 @@ const candongas = () => {
   );
 };
 
-export default candongas;
+export default anillos;
