@@ -25,7 +25,24 @@
   }
 }
 
-// 
+.agagem {
+  display: flex;
+  align-items: center;
+  width: 100%;
+  // height: 400px;
+  position: absolute;
+  transform: translate(0, 200px );
+  padding: 5%;
+  //border: 1px solid;
 
-
-
+  & figure {
+    padding: 2%;
+    //border: 1px solid;
+    overflow: hidden;
+    & img {
+      width: 100%;
+      box-shadow: 0 13px 15px #969696;
+      border-radius: 15px;
+    }
+  }
+}
