@@ -50,9 +50,9 @@ const tobilleras = () => {
   return (
     <>
       <section className={styles.agagem}>
-      <buttons className="next" onClick={() => paginate(1)}>
+      <button className="next" onClick={() => paginate(1)}>
         <FiChevronLeft />
-      </buttons>
+      </button>
       <AnimatePresence initial={false} custom={direction}>
       <figure>
        <motion.img
@@ -82,9 +82,9 @@ const tobilleras = () => {
         />
        </figure>
       </AnimatePresence>
-      <buttons className="prev" onClick={() => paginate(-1)}>
+      <button className="prev" onClick={() => paginate(-1)}>
         <FiChevronRight />
-      </buttons>
+      </button>
       </section>
     </>
   );
