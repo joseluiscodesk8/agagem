@@ -39,16 +39,46 @@
   transition: 0.5s ease-in-out;
   //border: 1px solid;
 
-  & figure {
-    width: 250px;
-    padding: 2%;
-    //border: 1px solid;
-    //overflow: hidden;
-    & img {
-      width: 100%;
-      scale: 1.1;
-      box-shadow:  0 0 5px 1px #000;
-      border-radius: 15px;
+  // & figure {
+  //   width: 250px;
+  //   padding: 2%;
+  //   //border: 1px solid;
+  //   //overflow: hidden;
+  //   & img {
+  //     width: 100%;
+  //     scale: 1.1;
+  //     box-shadow:  0 0 5px 1px #000;
+  //     border-radius: 15px;
+  //   }
+  // }
+}
+
+.mySwiper {
+  width: 90%;
+  max-width: 500px;
+  height: 400px;
+  // position: absolute;
+  // transform: translate(0, 240px );
+  padding: 5%;
+  overflow: hidden;
+  transition: 0.5s ease-in-out;
+
+  & .swiper-slide {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #000;
+    & figure {
+      width: 250px;
+      padding: 2%;
+      //border: 1px solid;
+      //overflow: hidden;
+      & img {
+        width: 100%;
+        box-shadow:  0 0 5px 1px #000;
+        border-radius: 15px;
+      }
     }
+   
   }
 }
