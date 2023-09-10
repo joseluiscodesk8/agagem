@@ -1,9 +1,7 @@
 .navContainer {
   display: -webkit-flex;
   display: flex;
-  -webkit-align-items: center;
   align-items: center;
-  -webkit-justify-content: space-between;
   justify-content: space-between;
   margin: auto;
   width: 90%;
@@ -11,21 +9,19 @@
   overflow: hidden;
   position: relative;
   height: 40px;
+  z-index: 1000;
 
   & .nav_agagem {
     list-style: none;
     margin: 0;
     padding: 0;
-    -webkit-transform: translateY(0);
+
     transform: translateY(0);
     width: 50%;
     height: 100%;
     overflow: hidden;
     & ul {
-      display: -webkit-flex;
       display: flex;
-      -webkit-flex-direction: column;
-
       flex-direction: column;
       & li {
         display: grid;
@@ -33,7 +29,6 @@
         height: 40px;
         border-radius: 5px;
         border: 1px solid #fcebdd;
-        -webkit-box-shadow: inset 0 0 15px #e2b795;
         box-shadow: inset 0 0 15px #e2b795;
         color: #c96513;
         letter-spacing: 1px;

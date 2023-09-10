@@ -1,78 +1,25 @@
 @use "./components/NavStyles";
 
-.pack {
-  width: 100%;
-  height: 400px;
-  position: absolute;
-  transform: translate(0, 230px );
-  padding: 5%;
-  margin: 10px;
-
-  @media screen and (min-width: 900px){
-    transform: translate(0, 320px);
-  }
-
-  & figure {
-    // box-shadow: inset 0 0 20px #b6b3b3;
-    // border-radius: 10px;
-    & img {
-      height: 280px;
-      // margin: 20px auto;
-      //-webkit-box-shadow: 0 0 10px #000, 0 0 5px #000000;
-      box-shadow: 0 13px 15px #969696;
-      border-radius: 15px;
-    }
-  }
-}
-
-.agagem {
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  width: 100%;
-  max-width: 500px;
-  height: 400px;
-  position: absolute;
-  transform: translate(0, 240px );
-  padding: 5%;
-  overflow: hidden;
-  transition: 0.5s ease-in-out;
-  //border: 1px solid;
-
-  // & figure {
-  //   width: 250px;
-  //   padding: 2%;
-  //   //border: 1px solid;
-  //   //overflow: hidden;
-  //   & img {
-  //     width: 100%;
-  //     scale: 1.1;
-  //     box-shadow:  0 0 5px 1px #000;
-  //     border-radius: 15px;
-  //   }
-  // }
-}
-
 .mySwiper {
   width: 90%;
   max-width: 500px;
-  height: 400px;
-  // position: absolute;
-  // transform: translate(0, 240px );
-  padding: 5%;
-  overflow: hidden;
+  height: 300px;
+  position: absolute;
+  transform: translate(0, 100px );
+  // overflow: hidden;
+  //border: 1px solid;
   transition: 0.5s ease-in-out;
 
-  & .swiper-slide {
+  & .swiper {
     display: flex;
     align-items: center;
     justify-content: center;
     color: #000;
+    // display: none;
     & figure {
-      width: 250px;
       padding: 2%;
       //border: 1px solid;
-      //overflow: hidden;
+      overflow: hidden;
       & img {
         width: 100%;
         box-shadow:  0 0 5px 1px #000;
