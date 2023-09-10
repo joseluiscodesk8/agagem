@@ -4,19 +4,29 @@ import 'swiper/css';
 import 'swiper/css/effect-creative';
 import { EffectCreative } from 'swiper/modules';
 import Image from 'next/image';
-import styles from '../styles/index.module.scss'; // Importa tus estilos Sass como un objeto
-
+import styles from '../styles/index.module.scss'; 
 
 const images = [
-  '/e1.jpg',
-  '/e2.jpg',
-  '/e3.jpg',
-  '/e4.jpg',
-  '/e5.jpg',
-  // Agrega aquí más rutas de imágenes según sea necesario
+  '/candongas/c111.jpg',
+  '/candongas/c222.jpg',
+  '/candongas/c333.jpg',
+  '/candongas/c444.jpg',
+  '/candongas/c111.jpg',
+  '/ejemplo/e2.jpg',
+  '/ejemplo/e22.jpg',
+  '/ejemplo/e3.jpg',
+  '/ejemplo/e33.jpg',
+  '/ejemplo/e4.jpg',
+  '/ejemplo/e44.jpg',
+  '/ejemplo/e5.jpg',
+  '/ejemplo/e55.jpg',
+  '/ejemplo/e6.jpg',
+  '/ejemplo/e66.jpg',
+  '/ejemplo/e7.jpg',
+  '/ejemplo/e77.jpg',
 ];
 
-const Resina = () => { // Cambia el nombre de la función a Resina
+const Resina = () => {
   const swiperRef = useRef(null);
 
   return (
@@ -27,20 +37,23 @@ const Resina = () => { // Cambia el nombre de la función a Resina
         creativeEffect={{
           prev: {
             shadow: true,
-            translate: [0, 0, -400],
+            translate: [0, 0, -100],
           },
           next: {
             translate: ['100%', 0, 0],
           },
         }}
         modules={[EffectCreative]}
-        className={styles.mySwiper} // Aplica los estilos utilizando la variable "styles"
+        className={styles.mySwiper}
         ref={swiperRef}
+        onSwiper={(swiper) => {
+          swiperRef.current = swiper;
+        }}
       >
         {images.map((image, index) => (
           <SwiperSlide key={index} className={styles.swiper}>
             <figure>
-            <Image src={image} alt={`Slide ${index + 1}`} width={500} height={500} />
+              <Image src={image} alt={`Slide ${index + 1}`} width={500} height={500} />
             </figure>
           </SwiperSlide>
         ))}
@@ -49,4 +62,5 @@ const Resina = () => { // Cambia el nombre de la función a Resina
   );
 }
 
-export default Resina; // Exporta el componente con el nombre Resina
+export default Resina;
+
