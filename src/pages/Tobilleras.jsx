@@ -7,22 +7,14 @@ import Image from 'next/image';
 import styles from '../styles/index.module.scss'; 
 
 const images = [
-  '/ejemplo/e2.jpg',
-  '/ejemplo/e22.jpg',
-  '/ejemplo/e3.jpg',
-  '/ejemplo/e33.jpg',
-  '/ejemplo/e4.jpg',
+  '/ejemplo/y1.jpg',
+  '/ejemplo/c1.jpg',
+  '/ejemplo/e222.jpg',
+  '/ejemplo/p1.jpg',
   '/ejemplo/e44.jpg',
   '/ejemplo/e5.jpg',
-  '/ejemplo/e55.jpg',
-  '/ejemplo/e6.jpg',
   '/ejemplo/e66.jpg',
-  '/ejemplo/e7.jpg',
   '/ejemplo/e77.jpg',
-  '/candongas/c111.jpg',
-  '/candongas/c222.jpg',
-  '/candongas/c333.jpg',
-  '/candongas/c444.jpg',
 ];
 
 const Resina = () => {
