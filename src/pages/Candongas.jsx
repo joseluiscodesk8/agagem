@@ -7,14 +7,14 @@ import Image from 'next/image';
 import styles from '../styles/index.module.scss'; 
 
 const images = [
-  '/ejemplo/y1.jpg',
-  '/ejemplo/c1.jpg',
-  '/ejemplo/e222.jpg',
-  '/ejemplo/p1.jpg',
-  '/ejemplo/e44.jpg',
-  '/ejemplo/e5.jpg',
-  '/ejemplo/e66.jpg',
-  '/ejemplo/e77.jpg',
+  '/candongas/c1.jpg',
+  '/candongas/c2.jpg',
+  '/candongas/c3.jpg',
+  '/candongas/c4.jpg',
+  '/candongas/c5.jpg',
+  '/candongas/c6.jpg',
+  '/candongas/c7.jpg',
+  '/candongas/c8.jpg',
 ];
 
 const Candogas = () => {
