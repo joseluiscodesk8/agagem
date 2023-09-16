@@ -7,14 +7,16 @@ import Image from 'next/image';
 import styles from '../styles/index.module.scss'; 
 
 const images = [
-  '/ejemplo/y1.jpg',
-  '/ejemplo/c1.jpg',
-  '/ejemplo/e222.jpg',
-  '/ejemplo/p1.jpg',
-  '/ejemplo/e44.jpg',
-  '/ejemplo/e5.jpg',
-  '/ejemplo/e66.jpg',
-  '/ejemplo/e77.jpg',
+  '/llaveros/k1.jpg',
+  '/llaveros/k2.jpg',
+  '/llaveros/k3.jpg',
+  '/llaveros/k4.jpg',
+  '/llaveros/k5.jpg',
+  '/llaveros/k6.jpg',
+  '/llaveros/k7.jpg',
+  '/llaveros/k8.jpg',
+  '/llaveros/k9.jpg',
+  '/llaveros/k10.jpg',
 ];
 
 const Resina = () => {
@@ -27,7 +29,7 @@ const Resina = () => {
         effect={'creative'}
         creativeEffect={{
           prev: {
-            shadow: true,
+            // shadow: true,
             translate: [0, 0, -100],
           },
           next: {
