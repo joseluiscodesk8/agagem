@@ -1,13 +1,26 @@
-import Logo from "../comnponents/Logo"
+import Logo from "../components/Logo"
 
-const { default: Navbar } = require("../comnponents/Navbar")
+const { default: Navbar } = require("../components/Navbar")
+
+const menuItems = [
+    { label: 'Inicio', path: '/' },
+    'Resina',
+    'Pulseras_duo',
+    'Pulsera_set_x3',
+    'Topos',
+    'Candongas',
+    'Tobilleras',
+    'Anillos',
+    'Cadenas',
+  ];
+
 
 const Layout = ( {chiledre}) => {
     return (
         <>
             {chiledre}
             <Logo />
-            <Navbar />
+            <Navbar  menuItems={menuItems}/>
         </>
     )
 }
