@@ -19,10 +19,9 @@ a {
 }
 
 picture {
-  display: -webkit-flex;
   display: flex;
 }
 
-img {
+.logoAgagem {
   margin:  20px auto;
 }

@@ -1,11 +1,13 @@
-import React, { useState } from "react";
+// Navbar.jsx
+import { useState, useEffect } from "react";
 import Link from "next/link";
 import { FiChevronUp, FiChevronDown } from "react-icons/fi";
+import { useRouter } from "next/router";
 import styles from "../../styles/index.module.scss";
 
 const Navbar = () => {
   const navigationItems = [
-    { label: "Inicio", href: "/" },
+    { label: "Home", href: "/" },
     { label: "Resina", href: "/Resina" },
     { label: "pulseras_duo", href: "/Pulseras_duo" },
     { label: "pulseras_duox3", href: "/Pulseras_duox3" },
@@ -13,16 +15,35 @@ const Navbar = () => {
   ];
 
   const [menuPosition, setMenuPosition] = useState(0);
+  const router = useRouter();
+
+  useEffect(() => {
+    // Use the router pathname to determine the menu position
+    const currentPath = router.pathname;
+    const menuItem = navigationItems.find((item) => item.href === currentPath);
+    if (menuItem) {
+      setMenuPosition(navigationItems.indexOf(menuItem));
+    }
+  }, [router.pathname]);
 
   const handleMoveUp = () => {
     if (menuPosition > 0) {
       setMenuPosition(menuPosition - 1);
+      navigateToPage(menuPosition - 1);
     }
   };
 
   const handleMoveDown = () => {
     if (menuPosition < navigationItems.length - 1) {
       setMenuPosition(menuPosition + 1);
+      navigateToPage(menuPosition + 1);
+    }
+  };
+
+  const navigateToPage = (position) => {
+    const menuItem = navigationItems[position];
+    if (menuItem) {
+      router.push(menuItem.href);
     }
   };
 
@@ -36,7 +57,7 @@ const Navbar = () => {
         <ul
           style={{
             transform: `translateY(-${menuPosition * 20}%)`,
-            transition: "transform 0.3s ease",
+            transition: "transform 0.4s ease-in-out",
           }}
         >
           {navigationItems.map((item, index) => (
@@ -55,4 +76,3 @@ const Navbar = () => {
 };
 
 export default Navbar;
-

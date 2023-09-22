@@ -19,6 +19,7 @@
   },
   "devDependencies": {
     "autoprefixer": "^10.4.16",
+    "framer-motion": "^10.16.4",
     "postcss": "^8.4.30",
     "react-slick": "^0.29.0",
     "sass": "^1.68.0"
