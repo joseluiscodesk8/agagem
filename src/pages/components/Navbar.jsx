@@ -1,9 +1,7 @@
 // Navbar.jsx
 import { useState, useEffect, useMemo } from "react";
-import { useCart } from '../../Context/Cartcontext';
 import Link from "next/link";
 import { FiChevronUp, FiChevronDown } from "react-icons/fi";
-import { AiOutlineShoppingCart } from 'react-icons/ai';
 import { useRouter } from "next/router";
 import styles from "../../styles/index.module.scss";
 
@@ -19,7 +17,7 @@ const Navbar = () => {
 
   const [menuPosition, setMenuPosition] = useState(0);
   const router = useRouter();
-  const { cartCount } = useCart();
+
 
   useEffect(() => {
     // Use el pathname del router para determinar la posición del menú
@@ -51,17 +49,8 @@ const Navbar = () => {
     }
   };
 
-  const goToCart = () => {
-    router.push('/carrito'); 
-  };
-
   return (
     <section className={styles.navContainer}>
-
-      <div className="cart-icon" onClick={goToCart}>
-        <AiOutlineShoppingCart />
-        <span className="cart-count">{cartCount}</span>
-      </div>
 
       <button className={styles.navArrow} onClick={handleMoveUp}>
         <FiChevronUp />
