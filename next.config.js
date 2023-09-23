@@ -15,5 +15,13 @@ module.exports = {
       });
 
       return config;
-  }
+  },
+  async rewrites() {
+    return [
+      {
+        source: '/carrito',
+        destination: '/Carrito', // Nombre de la página de carrito (debe coincidir con el nombre del archivo)
+      },
+    ];
+  },
 };
