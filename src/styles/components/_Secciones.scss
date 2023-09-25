@@ -10,6 +10,7 @@
     & figure {
         margin: auto;
         width: 80%;
+        max-width: 280px;
         position: relative;
         // border: 1px solid;
 
@@ -33,6 +34,21 @@
             z-index: 1; /* Colocar detrás de la imagen */
             animation: loading 2s linear infinite; /* Animación de carga */
             transition: animation 0.3s ease-in-out;
+        }
+
+        & button {
+            width: 130px;
+            height: 20px;
+            border-radius: 10px;
+            transform: translate(0, 5px);
+            // background: #c96513;
+            box-shadow: inset 0 0 15px #c96513;
+            // color: #c96513;
+            border: none;
+
+            &:active {
+                scale: 0.9;
+            }
         }
     }
 

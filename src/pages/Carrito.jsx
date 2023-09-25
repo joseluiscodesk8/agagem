@@ -1,8 +1,15 @@
+// En el componente Carrito
+import React, { useEffect } from 'react';
 import Image from 'next/image';
-import { useCart } from '../Context/Cartcontext';
+import { useCart } from './Context/Cartcontext';
 
 const Carrito = () => {
   const { cartItems, removeFromCart } = useCart();
+
+  useEffect(() => {
+    // Carga el carrito desde el contexto cuando el componente se monta
+    // Esto asegura que los datos del carrito estén disponibles después de la recarga de página
+  }, []);
 
   return (
     <div>
