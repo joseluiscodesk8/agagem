@@ -1,6 +1,6 @@
 // En el componente Car
 import React, { useEffect } from 'react';
-import { useCart } from '../Context/Cartcontext';
+import { useCart } from '../../Context/Cartcontext';
 import { useRouter } from "next/router";
 import { BsCartCheckFill } from "react-icons/bs";
 import styles from "../../styles/index.module.scss";

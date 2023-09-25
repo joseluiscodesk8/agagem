@@ -1,7 +1,7 @@
 // En el componente Carrito
 import React, { useEffect } from 'react';
 import Image from 'next/image';
-import { useCart } from './Context/Cartcontext';
+import { useCart } from '../Context/Cartcontext';
 
 const Carrito = () => {
   const { cartItems, removeFromCart } = useCart();

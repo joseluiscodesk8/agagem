@@ -1,6 +1,6 @@
 import Image from "next/image";
 import { motion } from "framer-motion";
-import { useCart } from './Context/Cartcontext';
+import { useCart } from '../Context/Cartcontext';
 import styles from "../styles/index.module.scss";
 
 const iamges = [

@@ -1,6 +1,6 @@
 import '@/styles/globals.css'
 import Layout from './container/Layout'
-import { CartProvider } from './Context/Cartcontext'
+import { CartProvider } from '../Context/Cartcontext'
 
 export default function App({ Component, pageProps }) {
   return (
