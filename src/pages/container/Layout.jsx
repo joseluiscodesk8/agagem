@@ -1,15 +1,11 @@
 import { CartProvider } from "../../Context/Cartcontext";
-import Car from "../components/Car";
-import Logo from "../components/Logo";
 import Navbar from "../components/Navbar";
 
-const Layout = ({ chiledre }) => {
+const Layout = ({  chiledre, showNavbar = true }) => {
   return (
     <>
       {chiledre}
-      <Car />
-      <Logo />
-      <Navbar />
+      {showNavbar && <Navbar />}
       <CartProvider />
     </>
   );

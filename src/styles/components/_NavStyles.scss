@@ -1,3 +1,42 @@
+.cartContainer {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: 85%;
+  max-width: 500px;
+  margin: auto;
+  height: 40px;
+
+  & section:nth-child(1) {
+    color: #c96513;
+    font-size: 1.2rem;
+    //border: 1px solid;
+    width: 40px;
+    // position: fixed;
+
+    & div {
+      display: grid;
+      place-content: center;
+      position: absolute;
+      transform: translate(10px,-25px);
+      color: #fff;
+      width: 15px;
+      height: 15px;
+      border-radius: 10px;
+      background: #c96513;
+
+      & span {
+        font-size: 0.8rem;
+      }
+    }
+  }
+
+  & section:nth-child(2) {
+    color: #c96513;
+  }
+
+}
+
 .navContainer {
   display: -webkit-flex;
   display: flex;
@@ -10,6 +49,7 @@
   position: relative;
   height: 40px;
   z-index: 1000;
+  //border: 1px solid;
 
   & .nav_agagem {
     list-style: none;
@@ -57,62 +97,3 @@
   }
 }
 
-/* Navbar.module.scss */
-// .navContainer {
-//   position: fixed;
-//   top: 0;
-//   left: 0;
-//   right: 0;
-//   display: flex;
-//   justify-content: space-between;
-//   align-items: center;
-//   background-color: #fff;
-//   padding: 10px 20px;
-//   box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-//   z-index: 100;
-// }
-
-// .navArrow {
-//   background: none;
-//   border: none;
-//   cursor: pointer;
-//   font-size: 24px;
-// }
-
-// .nav_agagem ul {
-//   list-style: none;
-//   padding: 0;
-//   display: flex;
-//   margin: 0;
-// }
-
-// .nav_agagem li {
-//   margin-right: 20px;
-//   cursor: pointer;
-//   font-weight: bold;
-//   transition: color 0.3s ease;
-// }
-
-// .nav_agagem li:last-child {
-//   margin-right: 0;
-// }
-
-// .nav_agagem li:hover {
-//   color: #007bff;
-// }
-
-// .nav_agagem .active {
-//   color: #007bff;
-// }
-
-/* Sections.module.scss */
-/* Estilos generales para las secciones */
-// section {
-//   height: 500px; /* Ajusta la altura según tu diseño */
-//   display: flex;
-//   justify-content: center;
-//   align-items: center;
-// }
-
-/* Estilos para cada sección específica (Resina, PulseraDuo, etc.) */
-/* Añade estilos adicionales según cada sección */

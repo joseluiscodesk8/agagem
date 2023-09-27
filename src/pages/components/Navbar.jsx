@@ -1,23 +1,25 @@
-// Navbar.jsx
 import { useState, useEffect, useMemo } from "react";
 import Link from "next/link";
 import { FiChevronUp, FiChevronDown } from "react-icons/fi";
 import { useRouter } from "next/router";
 import styles from "../../styles/index.module.scss";
+import Logo from "./Logo";
+import CartAndSesion from "./CartAndSesion";
 
 const Navbar = () => {
-  // Utiliza useMemo para memorizar navigationItems
-  const navigationItems = useMemo(() => [
-    { label: "Home", href: "/" },
-    { label: "Resina", href: "/Resina" },
-    { label: "pulseras_duo", href: "/Pulseras_duo" },
-    { label: "pulseras_duox3", href: "/Pulseras_duox3" },
-    { label: "Candongas", href: "/Candongas" },
-  ], []);
+  const navigationItems = useMemo(
+    () => [
+      { label: "Home", href: "/" },
+      { label: "Resina", href: "/Resina" },
+      { label: "pulseras_duo", href: "/Pulseras_duo" },
+      { label: "pulseras_duox3", href: "/Pulseras_duox3" },
+      { label: "Candongas", href: "/Candongas" },
+    ],
+    []
+  );
 
   const [menuPosition, setMenuPosition] = useState(0);
   const router = useRouter();
-
 
   useEffect(() => {
     // Use el pathname del router para determinar la posición del menú
@@ -50,31 +52,34 @@ const Navbar = () => {
   };
 
   return (
-    <section className={styles.navContainer}>
+    <>
+      <CartAndSesion />
+      <Logo />
+      <section className={styles.navContainer}>
+        <button className={styles.navArrow} onClick={handleMoveUp}>
+          <FiChevronUp />
+        </button>
 
-      <button className={styles.navArrow} onClick={handleMoveUp}>
-        <FiChevronUp />
-      </button>
+        <nav className={styles.nav_agagem}>
+          <ul
+            style={{
+              transform: `translateY(-${menuPosition * 20}%)`,
+              transition: "transform 0.4s ease-in-out",
+            }}
+          >
+            {navigationItems.map((item, index) => (
+              <li key={index}>
+                <Link href={item.href}>{item.label}</Link>
+              </li>
+            ))}
+          </ul>
+        </nav>
 
-      <nav className={styles.nav_agagem}>
-        <ul
-          style={{
-            transform: `translateY(-${menuPosition * 20}%)`,
-            transition: "transform 0.4s ease-in-out",
-          }}
-        >
-          {navigationItems.map((item, index) => (
-            <li key={index}>
-              <Link href={item.href}>{item.label}</Link>
-            </li>
-          ))}
-        </ul>
-      </nav>
-
-      <button className={styles.navArrow} onClick={handleMoveDown}>
-        <FiChevronDown />
-      </button>
-    </section>
+        <button className={styles.navArrow} onClick={handleMoveDown}>
+          <FiChevronDown />
+        </button>
+      </section>
+    </>
   );
 };
 

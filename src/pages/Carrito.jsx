@@ -2,17 +2,15 @@
 import React, { useEffect } from 'react';
 import Image from 'next/image';
 import { useCart } from '../Context/Cartcontext';
+import Link from 'next/link';
 
 const Carrito = () => {
   const { cartItems, removeFromCart } = useCart();
 
-  useEffect(() => {
-    // Carga el carrito desde el contexto cuando el componente se monta
-    // Esto asegura que los datos del carrito estén disponibles después de la recarga de página
-  }, []);
 
   return (
-    <div>
+    <>
+      <div>
       <h1>Carrito de Compras</h1>
       {cartItems.map((item, index) => (
         <div key={index}>
@@ -21,6 +19,8 @@ const Carrito = () => {
         </div>
       ))}
     </div>
+    <Link href='/'>Home</Link>
+    </>
   );
 };
 

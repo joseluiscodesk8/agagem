@@ -8,16 +8,15 @@ export const useCart = () => {
 
 export const CartProvider = ({ children }) => {
   const [cartItems, setCartItems] = useState([]);
+  const [loggedInUser, setLoggedInUser] = useState(null);
 
   const addToCart = (item) => {
-    // Verifica si el item ya existe en el carrito antes de agregarlo
     if (!cartItems.some((cartItem) => cartItem.id === item.id)) {
       setCartItems([...cartItems, item]);
     }
   };
 
   const removeFromCart = (itemId) => {
-    // Elimina solo el primer elemento con el itemId proporcionado
     const updatedCart = cartItems.filter((item) => item.id !== itemId);
     setCartItems(updatedCart);
   };
@@ -25,7 +24,7 @@ export const CartProvider = ({ children }) => {
   const cartCount = cartItems.length;
 
   return (
-    <CartContext.Provider value={{ cartItems, addToCart, removeFromCart, cartCount }}>
+    <CartContext.Provider value={{ cartItems, addToCart, removeFromCart, cartCount, loggedInUser, setLoggedInUser }}>
       {children}
     </CartContext.Provider>
   );
