@@ -1,0 +1,52 @@
+.carritoContainer {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+    gap: 20px;
+    max-width: 500px;
+    margin: auto;
+    color: #c96513;
+    transition: 1s ease-in-out;
+    //border: 1px solid;
+
+    & div {
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+        align-items: center;
+        width: 80%;
+        // border: 1px solid;
+
+        & figure {
+            margin: auto;
+            width: 80%;
+            max-width: 280px;
+            position: relative;
+            // border: 1px solid;
+    
+            & img {
+                border-radius: 15px;
+                box-shadow: 0 0 10px #000;
+                width: 100%;
+                opacity: 1;
+                position: relative;
+                z-index: 2; /* Colocar la imagen sobre la animación */
+            }
+        }
+        & button {
+            width: 130px;
+            height: 20px;
+            border-radius: 10px;
+            transform: translate(0, 5px);
+            // background: #c96513;
+            box-shadow: inset 0 0 15px #c96513;
+            // color: #c96513;
+            border: none;
+    
+            &:active {
+                scale: 0.9;
+            }
+        }
+    }
+}

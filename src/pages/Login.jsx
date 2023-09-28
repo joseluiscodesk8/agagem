@@ -23,13 +23,15 @@ const Login = ({ onLogin }) => {
 
   const handleLogin = () => {
     setIsLoading(true);
-    const isAuthenticated = true;
+    const isAuthenticated = username != "" && password !== "";
 
     setTimeout(() => {
       if (isAuthenticated) {
         localStorage.setItem("username", username);
-        // onLogin(username);
+        setLoggedInUser(username);
         setIsLoggedIn(true);
+      } else {
+        alert('debes llenar los campos');
       }
       setIsLoading(false);
     }, 2000);
@@ -58,7 +60,6 @@ const Login = ({ onLogin }) => {
     setIsInputFocused(false);
   };
 
-  // Manejadores de eventos para el input de contraseña
   const handlePasswordChange = (e) => {
     setPassword(e.target.value);
   };

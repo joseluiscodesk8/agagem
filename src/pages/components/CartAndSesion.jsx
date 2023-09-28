@@ -1,4 +1,3 @@
-import React, { useEffect } from "react";
 import { useCart } from "../../Context/Cartcontext";
 import { useRouter } from "next/router";
 import Link from "next/link";
@@ -12,6 +11,7 @@ const CartAndSesion = () => {
   const goToCart = () => {
     router.push("/carrito");
   };
+
   return (
     <>
       <section className={styles.cartContainer}>
@@ -23,7 +23,7 @@ const CartAndSesion = () => {
         </section>
         <section>
         {loggedInUser ? (
-            <span>{loggedInUser}</span>
+            <Link href={'/Login'}>{loggedInUser}</Link>
           ) : (
             <Link href={'/Login'}>Login</Link>
           )}
