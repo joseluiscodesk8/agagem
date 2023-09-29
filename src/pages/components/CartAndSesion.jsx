@@ -1,22 +1,25 @@
+import React, { useEffect } from "react";
 import { useCart } from "../../Context/Cartcontext";
-import { useRouter } from "next/router";
 import Link from "next/link";
 import { BsCartCheckFill } from "react-icons/bs";
 import styles from "../../styles/index.module.scss";
 
 const CartAndSesion = () => {
-  const { cartCount, cartItems, loggedInUser } = useCart();
-  const router = useRouter();
+  const { cartCount, loggedInUser, setLoggedInUser } = useCart();
 
-  const goToCart = () => {
-    router.push("/carrito");
-  };
-
+  useEffect(() => {
+    // Recuperar el usuario logueado desde localStorage al cargar la página
+    const storedLoggedInUser = localStorage.getItem("username");
+    if (storedLoggedInUser) {
+      setLoggedInUser(storedLoggedInUser);
+    }
+  }, [setLoggedInUser]); 
+  
   return (
     <>
       <section className={styles.cartContainer}>
-        <section onClick={goToCart}>
-          <BsCartCheckFill />
+        <section>
+          <Link href="/Carrito"><BsCartCheckFill /></Link>
           <div>
           <span>{cartCount}</span>
           </div>
