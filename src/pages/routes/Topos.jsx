@@ -1,21 +1,17 @@
 import Image from "next/image";
 import { motion } from "framer-motion";
-import { useCart } from '../Context/Cartcontext';
-import styles from "../styles/index.module.scss";
+import { useCart } from '../../Context/Cartcontext';
+import styles from "../../styles/index.module.scss";
 
 const iamges = [
-  "/pulseraDuox3/p1.jpg",
-  "/pulseraDuox3/p2.jpg",
-  "/pulseraDuox3/p3.jpg",
-  "/pulseraDuox3/p4.jpg",
-  "/pulseraDuox3/p5.jpg",
-  "/pulseraDuox3/p6.jpg",
-  "/pulseraDuox3/p7.jpg",
-  "/pulseraDuox3/p8.jpg",
-  "/pulseraDuox3/p9.jpg",
+  "/topos/t1.jpg",
+  "/topos/t2.jpg",
+  "/topos/t3.jpg",
+  "/topos/t4.jpg",
+  "/topos/t5.jpg",
 ];
 
-const Pulseras_duox3 = () => {
+const Topos = () => {
 
   const { addToCart } = useCart();
 
@@ -36,11 +32,11 @@ const Pulseras_duox3 = () => {
             height={300}
             loading="lazy"
           />
-          <button onClick={() => addToCart({ id: index, image })}>Agregar al Carrito</button>
+          <button onClick={() => addToCart({ id: index, image, origin: '/routes/Topos' })}>Agregar al Carrito</button>
         </figure>
       ))}
     </motion.section>
   );
 };
 
-export default Pulseras_duox3;
+export default Topos;

@@ -1,9 +1,9 @@
 import Image from 'next/image';
-import { useCart } from '../Context/Cartcontext';
+import { useCart } from '../../Context/Cartcontext';
 import Link from 'next/link';
 import { motion } from 'framer-motion';
-import styles from "../styles/index.module.scss";
-import Logo from './components/Logo';
+import styles from "../../styles/index.module.scss";
+import Logo from '../components/Logo';
 
 const Carrito = () => {
   const { cartItems, removeFromCart, cartCount } = useCart();
@@ -36,7 +36,7 @@ const Carrito = () => {
          <figure>
          <Image src={item.image} width={300} height={300} alt={`Producto ${index + 1}`} />
          </figure>
-          <button onClick={() => removeFromCart(item.id)}>Eliminar del Carrito</button>
+          <button onClick={() => removeFromCart(item.id, item.origin)}>Eliminar del Carrito</button>
         </div>
       ))}
       <Link href='/'>Home</Link>

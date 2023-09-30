@@ -18,18 +18,22 @@ const CartAndSesion = () => {
   return (
     <>
       <section className={styles.cartContainer}>
+        <section className={styles.itemsContainer}>
+
         <section>
-          <Link href="/Carrito"><BsCartCheckFill /></Link>
+          <Link href="/routes/Carrito"><BsCartCheckFill /></Link>
           <div>
           <span>{cartCount}</span>
           </div>
         </section>
         <section>
         {loggedInUser ? (
-            <Link href={'/Login'}>{loggedInUser}</Link>
+            <Link href={'/routes/Login'}>{loggedInUser}</Link>
           ) : (
-            <Link href={'/Login'}>Login</Link>
+            <Link href={'/routes/Login'}>Login</Link>
           )}
+        </section>
+        
         </section>
       </section>
     </>

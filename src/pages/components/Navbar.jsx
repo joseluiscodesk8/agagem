@@ -10,12 +10,12 @@ const Navbar = () => {
   const navigationItems = useMemo(
     () => [
       { label: "Home", href: "/" },
-      { label: "Resina", href: "/Resina" },
-      { label: "pulseras_duo", href: "/Pulseras_duo" },
-      { label: "pulseras_duox3", href: "/Pulseras_duox3" },
-      { label: "candongas", href: "/Candongas" },
-      { label: "topos", href: "/Topos"},
-      { label: "tobilleras", href: "/Tobilleras"},
+      { label: "Resina", href: "/routes/Resina" },
+      { label: "pulseras_duo", href: "/routes/PulserasDuo" },
+      { label: "pulseras_duox3", href: "/routes/PulserasDuox3" },
+      { label: "candongas", href: "/routes/Candongas" },
+      { label: "topos", href: "/routes/Topos"},
+      { label: "tobilleras", href: "/routes/Tobilleras"},
     ],
     []
   );

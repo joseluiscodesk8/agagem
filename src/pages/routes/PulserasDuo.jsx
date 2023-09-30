@@ -1,17 +1,17 @@
 import Image from "next/image";
 import { motion } from "framer-motion";
-import { useCart } from '../Context/Cartcontext';
-import styles from "../styles/index.module.scss";
+import { useCart } from '../../Context/Cartcontext';
+import styles from "../../styles/index.module.scss";
 
 const iamges = [
-  "/topos/t1.jpg",
-  "/topos/t2.jpg",
-  "/topos/t3.jpg",
-  "/topos/t4.jpg",
-  "/topos/t5.jpg",
+  "/pulseraDuo/p1.jpg",
+  "/pulseraDuo/p2.jpg",
+  "/pulseraDuo/p3.jpg",
+  "/pulseraDuo/p4.jpg",
+  "/pulseraDuo/p5.jpg",
 ];
 
-const Topos = () => {
+const PulseraDuo = () => {
 
   const { addToCart } = useCart();
 
@@ -32,11 +32,11 @@ const Topos = () => {
             height={300}
             loading="lazy"
           />
-          <button onClick={() => addToCart({ id: index, image })}>Agregar al Carrito</button>
+          <button onClick={() => addToCart({ id: index, image, origin: '/routes/PulserasDuo' })}>Agregar al Carrito</button>
         </figure>
       ))}
     </motion.section>
   );
 };
 
-export default Topos;
+export default PulseraDuo;

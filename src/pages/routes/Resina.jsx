@@ -1,16 +1,22 @@
 import Image from "next/image";
 import { motion } from "framer-motion";
-import { useCart } from '../Context/Cartcontext';
-import styles from "../styles/index.module.scss";
+import { useCart } from '../../Context/Cartcontext';
+import styles from "../../styles/index.module.scss";
 
 const iamges = [
-  "/tobilleras/t1.jpg",
-  "/tobilleras/t2.jpg",
-  "/tobilleras/t3.jpg",
-  "/tobilleras/t4.jpg",
+  "/llaveros/k1.jpg",
+  "/llaveros/k2.jpg",
+  "/llaveros/k3.jpg",
+  "/llaveros/k4.jpg",
+  "/llaveros/k5.jpg",
+  "/llaveros/k6.jpg",
+  "/llaveros/k7.jpg",
+  "/llaveros/k8.jpg",
+  "/llaveros/k9.jpg",
+  "/llaveros/k10.jpg",
 ];
 
-const Tobilleras = () => {
+const Resina = () => {
 
   const { addToCart } = useCart();
 
@@ -31,11 +37,12 @@ const Tobilleras = () => {
             height={300}
             loading="lazy"
           />
-          <button onClick={() => addToCart({ id: index, image })}>Agregar al Carrito</button>
+          <button onClick={() => addToCart({ id: index, image, origin: '/routes/Resina' })}>Agregar al Carrito</button>
         </figure>
       ))}
     </motion.section>
   );
 };
 
-export default Tobilleras;
+export default Resina;
+

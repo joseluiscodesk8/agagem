@@ -1,20 +1,21 @@
 import Image from "next/image";
 import { motion } from "framer-motion";
-import { useCart } from '../Context/Cartcontext';
-import styles from "../styles/index.module.scss";
+import { useCart } from '../../Context/Cartcontext';
+import styles from "../../styles/index.module.scss";
 
 const iamges = [
-  "/candongas/c1.jpg",
-  "/candongas/c2.jpg",
-  "/candongas/c3.jpg",
-  "/candongas/c4.jpg",
-  "/candongas/c5.jpg",
-  "/candongas/c6.jpg",
-  "/candongas/c7.jpg",
-  "/candongas/c8.jpg",
+  "/pulseraDuox3/p1.jpg",
+  "/pulseraDuox3/p2.jpg",
+  "/pulseraDuox3/p3.jpg",
+  "/pulseraDuox3/p4.jpg",
+  "/pulseraDuox3/p5.jpg",
+  "/pulseraDuox3/p6.jpg",
+  "/pulseraDuox3/p7.jpg",
+  "/pulseraDuox3/p8.jpg",
+  "/pulseraDuox3/p9.jpg",
 ];
 
-const Candongas = () => {
+const PulserasDuox3 = () => {
 
   const { addToCart } = useCart();
 
@@ -35,11 +36,11 @@ const Candongas = () => {
             height={300}
             loading="lazy"
           />
-          <button onClick={() => addToCart({ id: index, image })}>Agregar al Carrito</button>
+          <button onClick={() => addToCart({ id: index, image, origin: '/routes/PulseraDuox3' })}>Agregar al Carrito</button>
         </figure>
       ))}
     </motion.section>
   );
 };
 
-export default Candongas;
+export default PulserasDuox3;

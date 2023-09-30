@@ -1,9 +1,9 @@
 import Link from "next/link";
 import { useState, useEffect } from "react";
-import { useCart } from "../Context/Cartcontext";
+import { useCart } from "../../Context/Cartcontext";
 import { motion } from 'framer-motion';
-import styles from "../styles/index.module.scss";
-import Logo from "./components/Logo";
+import styles from "../../styles/index.module.scss";
+import Logo from "../components/Logo";
 
 const Login = ({ onLogin }) => {
   const [username, setUsername] = useState("");

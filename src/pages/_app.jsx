@@ -11,9 +11,9 @@ export default function App({ Component, pageProps }) {
 
   const router = useRouter();
 
-  const pagesWithoutNavbar = ['/Carrito', '/Login'];
-  const pagesWithoutSesion = ['/Carrito', '/Login'];
-  const pagesWithoutcart = ['/Login']
+  const pagesWithoutNavbar = ['/routes/Carrito', '/routes/Login'];
+  const pagesWithoutSesion = ['/routes/Carrito', '/routes/Login'];
+  const pagesWithoutcart = ['/routes/Login']
 
   const showNavbar = !pagesWithoutNavbar.includes(router.pathname);
   const showSesion = !pagesWithoutSesion.includes(router.pathname);

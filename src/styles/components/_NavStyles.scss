@@ -1,40 +1,47 @@
 .cartContainer {
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  width: 85%;
-  max-width: 500px;
-  margin: auto;
+  width: 100%;
   height: 40px;
+  position: fixed;
+  z-index: 1000;
 
-  & section:nth-child(1) {
-    color: #c96513;
-    font-size: 1.2rem;
+  & .itemsContainer {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    width: 85%;
+    margin: auto;
+    max-width: 500px;
+    transform: translate(0, 10px);
     //border: 1px solid;
-    width: 40px;
-    // position: fixed;
 
-    & div {
-      display: grid;
-      place-content: center;
-      position: absolute;
-      transform: translate(10px,-28px);
-      color: #fff;
-      width: 15px;
-      height: 15px;
-      border-radius: 10px;
-      background: #c96513;
+    & section:nth-child(1) {
+      color: #c96513;
+      font-size: 1.2rem;
+      //border: 1px solid;
+      width: 40px;
+      // position: fixed;
 
-      & span {
-        font-size: 0.8rem;
+      & div {
+        display: grid;
+        place-content: center;
+        position: absolute;
+        transform: translate(10px, -28px);
+        color: #fff;
+        width: 15px;
+        height: 15px;
+        border-radius: 10px;
+        background: #c96513;
+
+        & span {
+          font-size: 0.8rem;
+        }
       }
     }
-  }
 
-  & section:nth-child(2) {
-    color: #c96513;
+    & section:nth-child(2) {
+      color: #c96513;
+    }
   }
-
 }
 
 .navContainer {
@@ -96,4 +103,3 @@
     }
   }
 }
-

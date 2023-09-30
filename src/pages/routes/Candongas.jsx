@@ -1,17 +1,20 @@
 import Image from "next/image";
 import { motion } from "framer-motion";
-import { useCart } from '../Context/Cartcontext';
-import styles from "../styles/index.module.scss";
+import { useCart } from '../../Context/Cartcontext';
+import styles from "../../styles/index.module.scss";
 
 const iamges = [
-  "/pulseraDuo/p1.jpg",
-  "/pulseraDuo/p2.jpg",
-  "/pulseraDuo/p3.jpg",
-  "/pulseraDuo/p4.jpg",
-  "/pulseraDuo/p5.jpg",
+  "/candongas/c1.jpg",
+  "/candongas/c2.jpg",
+  "/candongas/c3.jpg",
+  "/candongas/c4.jpg",
+  "/candongas/c5.jpg",
+  "/candongas/c6.jpg",
+  "/candongas/c7.jpg",
+  "/candongas/c8.jpg",
 ];
 
-const Pulsera_duo = () => {
+const Candongas = () => {
 
   const { addToCart } = useCart();
 
@@ -32,11 +35,11 @@ const Pulsera_duo = () => {
             height={300}
             loading="lazy"
           />
-          <button onClick={() => addToCart({ id: index, image })}>Agregar al Carrito</button>
+          <button onClick={() => addToCart({ id: index, image, origin: '/routes/Candongas' })}>Agregar al Carrito</button>
         </figure>
       ))}
     </motion.section>
   );
 };
 
-export default Pulsera_duo;
+export default Candongas;

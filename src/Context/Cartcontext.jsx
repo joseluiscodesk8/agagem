@@ -22,15 +22,25 @@ export const CartProvider = ({ children }) => {
   
 
   const addToCart = (item) => {
-    if (!cartItems.some((cartItem) => cartItem.id === item.id)) {
+
+    const existingItemIndex = cartItems.findIndex(
+      (cartItem) => cartItem.id === item.id && cartItem.origin === item.origin
+    );
+
+    if (existingItemIndex !== -1) {
+      const updatedCart = [...cartItems];
+      updatedCart[existingItemIndex].quantity += item.quantity;
+      setCartItems(updatedCart);
+      localStorage.setItem('cartItems', JSON.stringify(updatedCart));
+    } else {
       const updatedCart = [...cartItems, item];
       setCartItems(updatedCart);
-      localStorage.setItem('cartItems', JSON.stringify(updatedCart))
+      localStorage.setItem('cartItems', JSON.stringify(updatedCart));
     }
   };
 
-  const removeFromCart = (itemId) => {
-    const updatedCart = cartItems.filter((item) => item.id !== itemId);
+  const removeFromCart = (itemId, itemOrigin) => {
+    const updatedCart = cartItems.filter((item) => !(item.id === itemId && item.origin === itemOrigin));
     setCartItems(updatedCart);
     localStorage.setItem('cartItems', JSON.stringify(updatedCart))
   };
