@@ -13,7 +13,9 @@ const Navbar = () => {
       { label: "Resina", href: "/Resina" },
       { label: "pulseras_duo", href: "/Pulseras_duo" },
       { label: "pulseras_duox3", href: "/Pulseras_duox3" },
-      { label: "Candongas", href: "/Candongas" },
+      { label: "candongas", href: "/Candongas" },
+      { label: "topos", href: "/Topos"},
+      { label: "tobilleras", href: "/Tobilleras"},
     ],
     []
   );
@@ -63,7 +65,7 @@ const Navbar = () => {
         <nav className={styles.nav_agagem}>
           <ul
             style={{
-              transform: `translateY(-${menuPosition * 20}%)`,
+              transform: `translateY(-${menuPosition * 40}px)`,
               transition: "transform 0.4s ease-in-out",
             }}
           >
