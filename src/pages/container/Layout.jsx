@@ -1,16 +1,15 @@
 import { CartProvider } from "../../Context/Cartcontext";
-// import Footer from "../components/Footer";
 import Navbar from "../components/Navbar";
 
-const Layout = ({  chiledre, showNavbar = true }) => {
+const Layout = ({ children, showNavbar = true }) => {
   return (
     <>
-      {chiledre}
       {showNavbar && <Navbar />}
+      {children}
       <CartProvider />
-      {/* <Footer /> */}
     </>
   );
 };
 
 export default Layout;
+
