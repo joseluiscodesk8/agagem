@@ -23,13 +23,8 @@ const Carrito = () => {
   return (
     <>
     <Logo />
-      <motion.section 
-      className={styles.carritoContainer}
-      initial="hidden"
-        animate="visible"
-        variants={itemVariants}
-        transition={{ duration: 0.5 }}
-      >
+      <section 
+      className={styles.carritoContainer}>
       <h1>Shopping Cart</h1>
       {cartItems.map((item, index) => (
         <div key={index}>
@@ -40,7 +35,7 @@ const Carrito = () => {
         </div>
       ))}
       <Link href='/'>Home</Link>
-    </motion.section>
+    </section>
     </>
   );
 };

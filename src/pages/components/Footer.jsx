@@ -27,7 +27,7 @@ const Footer = () => {
           initial={{ opacity: 1, x: 0 }} // Estado inicial de la primera sección
           animate={{
             opacity: showFirstContent ? 1 : 0, // Si showFirstContent es true, muestra la primera sección
-            x: showFirstContent ? 0 : 100, // Si showFirstContent es true, no desplazar en el eje X
+            x: showFirstContent ? 0 : 70, // Si showFirstContent es true, no desplazar en el eje X
           }}
           transition={{ duration: 0.5 }} // Duración de la animación
         >
@@ -52,22 +52,18 @@ const Footer = () => {
           transition={{ duration: 0.5 }} // Duración de la animación
         >
           <div className={styles.footerContent}>
-            <h3>Agagem Arte y Accesorios</h3>
-            <p><b>Ubicación:</b> Medellin Antioquia</p>
-            <p><b>Correo Electrónico: </b>agagem2023@gmail.com</p>
-            <p><b>Número de Teléfono:</b> 3232882017</p>
-            <p><b>Síguenos en Instagram:</b> <a href="">@agegem_</a></p>
-          </div>
-          <div className={styles.footerImage}>
-            <Image src="/agagem2.jpg" width={160} height={100} alt="loco" />
+            <h3>Desarrollador Por José luís Gómez A</h3>
+            <p><b>Herramientas:</b> Next.js</p>
+            <p><b>Estilos: </b>SASS</p>
+            <p><b>servidor: </b>node.js</p>
           </div>
         </motion.section>
+
+        </section>
 
         <motion.button onClick={toggleContent}>
           Cambiar Sección
         </motion.button>
-
-        </section>
       </footer>
     </>
   );

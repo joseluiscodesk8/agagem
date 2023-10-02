@@ -1,33 +1,31 @@
 .agagemFooter {
+        display: flex;
+    justify-content: space-around;
+    flex-direction: column;
   width: 100%;
-  height: 320px;
+  height: 350px;
   //border: 1px solid;
-  position: relative;
+  
+  overflow: hidden;
 
 //   @media screen and (min-width: 768px) {
 //     flex-direction: row;
 //   }
 
   & .agagemContainer {
-    display: flex;
-    justify-content: space-around;
-    flex-direction: column;
     width: 100%;
-    height: 100%;
-    align-items: center;
+    max-width: 350px ;
     margin: auto;
-    //border: 1px solid;
+    position: relative;
 
     & section:nth-child(1) {
-      position: relative;
-      // top: 135px;
-      //border: 1px solid;
+        height: 300px;
     }
 
     & section:nth-child(2) {
       position: absolute;
       top: 20px;
-      //border: 1px solid;
+      left: 5%;
     }
 
     & section {
@@ -35,19 +33,29 @@
       justify-content: space-evenly;
       flex-direction: column;
       align-items: center;
-      //   height: 280px;
-      //border: 1px solid;
+      width: 90%;
+      max-width: 320px;
+      margin: auto;
 
       & .footerContent {
         display: flex;
         justify-content: space-around;
         flex-direction: column;
         width: 100%;
-        // height: 150px;
+        height: 150px;
         color: #c96513;
         padding: 0.5%;
-        //border: 1px solid;
       }
     }
+  }
+
+  & button {
+    width: 120px;
+    padding: 0.4%;
+    border-radius: 15px;
+    border-color: #c96513;
+    color: #c96513;
+    margin: 20px auto;
+    background: transparent;
   }
 }
