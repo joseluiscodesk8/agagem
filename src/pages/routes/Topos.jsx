@@ -30,6 +30,7 @@ const Topos = () => {
             alt={`Slide ${index + 1}`}
             width={300}
             height={300}
+            priority={false}
             loading="lazy"
           />
           <button onClick={() => addToCart({ id: index, image, origin: '/routes/Topos' })}>Agregar al Carrito</button>

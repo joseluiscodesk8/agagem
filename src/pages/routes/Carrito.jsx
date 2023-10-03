@@ -29,7 +29,7 @@ const Carrito = () => {
       {cartItems.map((item, index) => (
         <div key={index}>
          <figure>
-         <Image src={item.image} width={300} height={300} alt={`Producto ${index + 1}`} />
+         <Image src={item.image} width={300} height={300} alt={`Producto ${index + 1}`} priority={false} />
          </figure>
           <button onClick={() => removeFromCart(item.id, item.origin)}>Eliminar del Carrito</button>
         </div>

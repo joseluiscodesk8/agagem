@@ -11,13 +11,14 @@ export default function App({ Component, pageProps }) {
 
   const router = useRouter();
 
-  const pagesWithoutNavbar = ['/routes/Carrito', '/routes/Login'];
+  const pagesWithoutNavbar = ['/routes/Carrito', '/routes/Login', '/routes/Register'];
   const pagesWithoutSesion = ['/routes/Carrito', '/routes/Login'];
   const pagesWithoutcart = ['/routes/Login']
 
   const showNavbar = !pagesWithoutNavbar.includes(router.pathname);
   const showSesion = !pagesWithoutSesion.includes(router.pathname);
   const showCart = !pagesWithoutcart.includes(router.pathname);
+  const showRegister = !pagesWithoutNavbar.includes(router.pathname);
 
   const handleLogin = (username) => {
     setUsername(username);

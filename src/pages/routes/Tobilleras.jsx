@@ -29,6 +29,7 @@ const Tobilleras = () => {
             alt={`Slide ${index + 1}`}
             width={300}
             height={300}
+            priority={false}
             loading="lazy"
           />
           <button onClick={() => addToCart({ id: index, image, origin: '/routes/Tobilleras' })}>Agregar al Carrito</button>

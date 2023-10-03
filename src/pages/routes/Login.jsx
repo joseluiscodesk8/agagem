@@ -15,12 +15,11 @@ const Login = ({ onLogin }) => {
   const { setLoggedInUser } = useCart();
 
   useEffect(() => {
-    // Recuperar el usuario logueado desde localStorage al cargar la página
     const storedUsername = localStorage.getItem("username");
     if (storedUsername) {
       setUsername(storedUsername);
       setIsLoggedIn(true);
-      setLoggedInUser(storedUsername); // Actualiza loggedInUser en el contexto
+      setLoggedInUser(storedUsername); 
     }
   }, [setLoggedInUser]);
 
@@ -80,6 +79,7 @@ const Login = ({ onLogin }) => {
     hidden: { opacity: 0 },
     visible: { opacity: 1 },
   };
+
 
 
   return (
@@ -145,6 +145,7 @@ const Login = ({ onLogin }) => {
         )}
         <div>
           <Link href="/">Home</Link>
+          <Link href="/routes/Register">Registarse</Link>
         </div>
       </motion.section>
     </>
