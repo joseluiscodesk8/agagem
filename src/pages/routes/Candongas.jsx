@@ -1,4 +1,3 @@
-import React, { useCallback, useEffect, useRef, useState } from "react";
 import Image from "next/image";
 import { motion } from "framer-motion";
 import { useCart } from '../../Context/Cartcontext';
@@ -18,40 +17,16 @@ const images = [
 const Candongas = () => {
 
   const { addToCart } = useCart();
-  const containerRef = useRef(null);
-  const [visibleImageIndex, setVisibleImageIndex] = useState(0);
-
-  const handleScroll = useCallback(() => {
-    const container = containerRef.current;
-    if (container) {
-      const windowHeight = window.innerHeight;
-      const containerTop = container.getBoundingClientRect().top;
-      if (containerTop < windowHeight / 2) {
-        if (visibleImageIndex < images.length - 1) {
-          setVisibleImageIndex(prevIndex => prevIndex + 1);
-        }
-      }
-    }
-  },[visibleImageIndex])
-
-  useEffect(() => {
-    window.addEventListener("scroll", handleScroll);
-    return () => {
-      window.removeEventListener("scroll", handleScroll);
-    };
-  }, [handleScroll]);
   
-
   return (
     <motion.section
-    ref={containerRef}
       initial={{ scale: 0.5, opacity: 0 }}
       animate={{ scale: 1, opacity: 1 }}
       exit={{ scale: 0.5, opacity: 0 }}
       transition={{ duration: 0.5 }}
       className={styles.resina}
     >
-      {images.slice(0, visibleImageIndex + 1).map((image, index) => (
+      {images.map((image, index) => (
         <figure key={index}>
           <Image
             src={image}

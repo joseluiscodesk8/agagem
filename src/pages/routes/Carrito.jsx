@@ -1,7 +1,6 @@
 import Image from 'next/image';
 import { useCart } from '../../Context/Cartcontext';
 import Link from 'next/link';
-import { motion } from 'framer-motion';
 import styles from "../../styles/index.module.scss";
 import Logo from '../components/Logo';
 
@@ -14,10 +13,6 @@ const Carrito = () => {
   };
 
 
-  const itemVariants = {
-    hidden: { opacity: 0 },
-    visible: { opacity: 1 },
-  };
 
 
   return (

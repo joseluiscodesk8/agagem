@@ -1,10 +1,18 @@
-import Head from 'next/head'
-import Image from 'next/image'
-import { Inter } from 'next/font/google'
+import Head from "next/head";
+import Image from "next/image";
+import { Inter } from "next/font/google";
+import { motion } from "framer-motion";
+import Footer from "./components/Footer";
 
-const inter = Inter({ subsets: ['latin'] })
+const inter = Inter({ subsets: ["latin"] });
 
 export default function Home() {
+
+  const itemVariants = {
+    hidden: { opacity: 0 },
+    visible: { opacity: 1 },
+  };
+
   return (
     <>
       <Head>
@@ -13,6 +21,35 @@ export default function Home() {
         <meta name="viewport" content="width=device-width, initial-scale=1" />
         <link rel="icon" href="/favicon.ico" />
       </Head>
+      <motion.main
+          initial="hidden"
+          animate="visible"
+          variants={itemVariants}
+          transition={{ duration: 0.5 }}
+      >
+        <h3>Bienvenido a AGAGEM</h3>
+        <p>
+          Somos una empresa creada en 2023 por Astrid Gómez y Genesis Miranda,
+          dos mujeres amantes de los diseños de bisutería y la resina.
+        </p>
+        <h3>Productos:</h3>
+        <p>
+          En nuestro portal, puedes encontrar una variedad de productos de
+          bisutería y resina. Todo puede ser personalizado según tus gustos. En
+          la resina, puedes escoger colores, incrustaciones y más. En las
+          pulseras, pregunta por los colores disponibles; los dijes pueden
+          variar según el inventario.
+        </p>
+        <h3>Misión:</h3>
+        <p>
+          Enaltecer la belleza natural de nuestras clientes con nuestras prendas
+          de bisutería y crear recuerdos memorables con nuestros productos en
+          resina.
+        </p>
+        <h3>Visión:</h3>
+        <p>Queremos expandir nuestros diseños por toda Colombia. Contamos con domicilio en el Valle de Aburrá y ofrecemos envíos a casi todas las ciudades del país.</p>
+      </motion.main>
+      <Footer />
     </>
-  )
+  );
 }

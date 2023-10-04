@@ -26,3 +26,14 @@ picture {
 .logoAgagem {
   margin:  20px auto;
 }
+
+main {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-evenly;
+  width: 90%;
+  max-width: 500px;
+  height: 600px;
+  margin: 20px auto;
+  color: #c96513;
+}

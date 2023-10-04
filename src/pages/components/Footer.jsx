@@ -39,7 +39,7 @@ const Footer = () => {
             <p><b>Síguenos en Instagram:</b> <a href="">@agegem_</a></p>
           </div>
           <div className={styles.footerImage}>
-            <Image src="/agagem2.jpg" width={160} height={100} alt="loco" />
+            <Image src="/agagem3.jpg" width={112} height={63} alt="loco" />
           </div>
         </motion.section>
 
