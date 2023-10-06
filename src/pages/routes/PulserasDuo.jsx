@@ -2,6 +2,7 @@ import Image from "next/image";
 import { motion } from "framer-motion";
 import { useCart } from '../../Context/Cartcontext';
 import styles from "../../styles/index.module.scss";
+import Footer from "../components/Footer";
 
 const images = [
   "/pulseraDuo/p1.jpg",
@@ -39,6 +40,7 @@ const PulseraDuo = () => {
           </figure>
         ))}
       </motion.section>
+      <Footer/>
     </>
   );
 };

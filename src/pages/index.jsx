@@ -27,7 +27,7 @@ export default function Home() {
           variants={itemVariants}
           transition={{ duration: 0.5 }}
       >
-        <h3>Bienvenido a AGAGEM</h3>
+        <h3>Bienvenidos a AGAGEM</h3>
         <p>
           Somos una empresa creada en 2023 por Astrid Gómez y Genesis Miranda,
           dos mujeres amantes de los diseños de bisutería y la resina.
@@ -40,14 +40,6 @@ export default function Home() {
           pulseras, pregunta por los colores disponibles; los dijes pueden
           variar según el inventario.
         </p>
-        <h3>Misión:</h3>
-        <p>
-          Enaltecer la belleza natural de nuestras clientes con nuestras prendas
-          de bisutería y crear recuerdos memorables con nuestros productos en
-          resina.
-        </p>
-        <h3>Visión:</h3>
-        <p>Queremos expandir nuestros diseños por toda Colombia. Contamos con domicilio en el Valle de Aburrá y ofrecemos envíos a casi todas las ciudades del país.</p>
       </motion.main>
       <Footer />
     </>

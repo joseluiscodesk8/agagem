@@ -3,6 +3,7 @@ import Image from "next/image";
 import { motion } from "framer-motion";
 import { useCart } from '../../Context/Cartcontext';
 import styles from "../../styles/index.module.scss";
+import Footer from "../components/Footer";
 
 const images = [
   "/pulseraDuox3/p1.jpg",
@@ -43,7 +44,8 @@ const PulserasDuox3 = () => {
   }, [handleScroll]);
 
   return (
-    <motion.section 
+    <>
+      <motion.section 
     ref={containerRef}
       initial={{ scale: 0.5, opacity: 0 }}
       animate={{ scale: 1, opacity: 1 }}
@@ -65,6 +67,8 @@ const PulserasDuox3 = () => {
         </figure>
       ))}
     </motion.section>
+    <Footer />
+    </>
   );
 };
 

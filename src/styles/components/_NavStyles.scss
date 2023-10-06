@@ -15,20 +15,28 @@
     //border: 1px solid;
 
     & section:nth-child(1) {
+      display: grid;
+      place-content: center;
       color: #c96513;
       font-size: 1.2rem;
-      //border: 1px solid;
       width: 40px;
+      height: 40px;
+      background: #f3cfb1;
+      border-radius: 20px;
       // position: fixed;
+
+      &:active {
+        scale: 0.8;
+      }
 
       & div {
         display: grid;
         place-content: center;
         position: absolute;
-        transform: translate(10px, -28px);
+        transform: translate(25px, -5px);
         color: #fff;
-        width: 15px;
-        height: 15px;
+        width: 20px;
+        height: 20px;
         border-radius: 10px;
         background: #c96513;
 

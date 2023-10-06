@@ -2,6 +2,7 @@ import Image from "next/image";
 import { motion } from "framer-motion";
 import { useCart } from '../../Context/Cartcontext';
 import styles from "../../styles/index.module.scss";
+import Footer from "../components/Footer";
 
 const iamges = [
   "/topos/t1.jpg",
@@ -16,7 +17,8 @@ const Topos = () => {
   const { addToCart } = useCart();
 
   return (
-    <motion.section
+    <>
+      <motion.section
       initial={{ scale: 0.5, opacity: 0 }}
       animate={{ scale: 1, opacity: 1 }}
       exit={{ scale: 0.5, opacity: 0 }}
@@ -37,6 +39,8 @@ const Topos = () => {
         </figure>
       ))}
     </motion.section>
+    <Footer />
+    </>
   );
 };
 
