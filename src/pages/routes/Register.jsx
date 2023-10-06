@@ -31,7 +31,7 @@ const Register = () => {
     }
 
     try {
-      const response = await axios.post("http://localhost:5000/api/register", {
+      const response = await axios.post("http://localhost:3000/api/users/register", {
         username,
         email,
         phone,
@@ -41,6 +41,7 @@ const Register = () => {
       setIsRegistered(true); // Simulando que el registro ha sido exitoso
     } catch (error) {
       console.error("Error al registrar el usuario:", error);
+      alert("Error al registrar el usuario. Por favor, inténtalo de nuevo.");
       // Puedes mostrar un mensaje de error al usuario aquí.
     }
 
