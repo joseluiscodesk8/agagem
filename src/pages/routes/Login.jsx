@@ -1,9 +1,11 @@
 import Link from "next/link";
 import { useState, useEffect } from "react";
 import { useCart } from "../../Context/Cartcontext";
+import axios from "axios";
 import { motion } from 'framer-motion';
 import styles from "../../styles/index.module.scss";
 import Logo from "../components/Logo";
+
 
 const Login = ({ onLogin }) => {
   const [username, setUsername] = useState("");
@@ -25,18 +27,47 @@ const Login = ({ onLogin }) => {
 
   const handleLogin = () => {
     setIsLoading(true);
-    const isAuthenticated = username != "" && password !== "";
+    // const isAuthenticated = username != "" && password !== "";
+    
+    
 
-    setTimeout(() => {
-      if (isAuthenticated) {
-        localStorage.setItem("username", username);
-        setLoggedInUser(username);
-        setIsLoggedIn(true);
-      } else {
-        alert('debes llenar los campos');
+    setTimeout(async () => {
+      // if (isAuthenticated) {
+      //   localStorage.setItem("username", username);
+      //   setLoggedInUser(username);
+      //   setIsLoggedIn(true);
+      // } else {
+      //   alert('debes llenar los campos');
+      // }
+      // setIsLoading(false);
+      try {
+        const response = await fetch("http://localhost:3000/api/v1/auth/login", {
+          method: "POST",
+          headers: {
+            "Content-Type": "application/json",
+          },
+          body: JSON.stringify({ username, password }),
+        });
+  
+        const data = await response.json();
+  
+        if (response.ok) {
+          // Inicio de sesión exitoso
+          alert(data.message);
+          localStorage.setItem("username", username);
+          setLoggedInUser(username);
+        } else {
+          // Inicio de sesión fallido
+          alert(data.message);
+        }
+      } catch (error) {
+        console.error("Error al enviar la solicitud:", error);
+        // Manejar errores de red u otros errores aquí
+      } finally {
+        setIsLoading(false);
       }
-      setIsLoading(false);
-    }, 2000);
+    }
+    );
   };
 
   const handleLogout = () => {
