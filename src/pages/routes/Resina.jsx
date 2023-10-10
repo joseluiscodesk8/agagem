@@ -1,60 +1,71 @@
-import React, { useCallback, useEffect, useRef, useState } from "react";
+import React, { useCallback, useEffect, useState } from "react";
 import Image from "next/image";
 import { motion } from "framer-motion";
 import { useCart } from "../../Context/Cartcontext";
 import styles from "../../styles/index.module.scss";
 import Footer from "../components/Footer";
 
-const images = [
-  { src: "/llaveros/k1.jpg",  price: '20.000', addedToCart: false },
-  { src: "/llaveros/k2.jpg",  price: '20.000', addedToCart: false },
-  { src: "/llaveros/k3.jpg",  price: '20.000', addedToCart: false },
-  { src: "/llaveros/k4.jpg",  price: '20.000', addedToCart: false },
-  { src: "/llaveros/k5.jpg",  price: '20.000', addedToCart: false },
-  { src: "/llaveros/k6.jpg",  price: '20.000', addedToCart: false },
-  { src: "/llaveros/k7.jpg",  price: '20.000', addedToCart: false },
-  { src: "/llaveros/k8.jpg",  price: '20.000', addedToCart: false },
-  { src: "/llaveros/k9.jpg",  price: '20.000', addedToCart: false },
-  { src: "/llaveros/k10.jpg",  price: '20.000', addedToCart: false },
+const imagesData = [
+  "/llaveros/k1.jpg",
+  "/llaveros/k2.jpg",
+  "/llaveros/k3.jpg",
+  "/llaveros/k4.jpg",
+  "/llaveros/k5.jpg",
+  "/llaveros/k6.jpg",
+  "/llaveros/k7.jpg",
+  "/llaveros/k8.jpg",
+  "/llaveros/k9.jpg",
+  "/llaveros/k10.jpg",
 ];
 
 const Resina = () => {
-  const { addToCart } = useCart();
-  const containerRef = useRef(null);
-  const [visibleImageIndex, setVisibleImageIndex] = useState(0);
-  const [isAddingToCart, setIsAddingToCart] = useState(false);
-
-  const handleScroll = useCallback(() => {
-    const container = containerRef.current;
-    if (container) {
-      const windowHeight = window.innerHeight;
-      const containerTop = container.getBoundingClientRect().top;
-      if (containerTop < windowHeight / 2) {
-        if (visibleImageIndex < images.length - 1) {
-          setVisibleImageIndex((prevIndex) => prevIndex + 1);
-        }
-      }
-    }
-  }, [visibleImageIndex]);
+  const { addToCart, cartItems } = useCart();
+  const [images, setImages] = useState(
+    imagesData.map((src, index) => ({
+      src: src,
+      id: index,
+      addedToCart: false,
+      price: "20.000",
+    }))
+  );
 
   useEffect(() => {
-    window.addEventListener("scroll", handleScroll);
-    return () => {
-      window.removeEventListener("scroll", handleScroll);
-    };
-  }, [handleScroll]);
+    // Verificar y actualizar el estado del botón al cargar la página
+    const updatedImages = images.map((image) => {
+      const cartItemIndex = cartItems.findIndex(
+        (item) => item.id === image.id && item.origin === "/routes/PulserasDuo"
+      );
+      return {
+        ...image,
+        addedToCart: cartItemIndex !== -1,
+      };
+    });
+    setImages(updatedImages);
+  }, [cartItems]);
+
+  const handleAddToCart = (index) => {
+    addToCart({
+      id: index,
+      image: images[index].src,
+      price: images[index].price,
+      origin: "/routes/PulserasDuo",
+    });
+
+    const updatedImages = [...images];
+    updatedImages[index].addedToCart = true;
+    setImages(updatedImages);
+  };
 
   return (
     <>
       <motion.section
-        ref={containerRef}
         initial={{ scale: 0.5, opacity: 0 }}
         animate={{ scale: 1, opacity: 1 }}
         exit={{ scale: 0.5, opacity: 0 }}
         transition={{ duration: 0.5 }}
         className={styles.resina}
       >
-        {images.slice(0, visibleImageIndex + 1).map((image, index) => (
+        {images.map((image, index) => (
           <section key={index}>
             <figure>
               <Image
@@ -68,18 +79,20 @@ const Resina = () => {
             </figure>
             <div>
               <button
-                onClick={() => {
-                  addToCart({ id: index, image: image.src, price: image.price, origin: "/routes/Resina" });
-                  const updatedImages = [...images];
-                  updatedImages[index].addedToCart = true;
-                  setIsAddingToCart(true);
-                }}
+                onClick={() => handleAddToCart(index)}
                 disabled={image.addedToCart}
               >
                 {image.addedToCart ? "Agregado" : "Agregar al Carrito"}
               </button>
-              <p><b>Precio:</b> {image.price} $</p>
+              <h4>
+                <b>Precio:</b> {image.price} $
+              </h4>
             </div>
+            <p>
+              <b>Llaveros en resina:</b> con la inicial de tu nombre con los
+              colores y incrustaciones de tu preferencia con cuencas acrílicas luminosas en la oscuridad  borla y un detalle
+              adicional.
+            </p>
           </section>
         ))}
       </motion.section>
