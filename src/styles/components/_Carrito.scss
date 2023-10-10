@@ -9,7 +9,7 @@
     padding: 1%;
     color: #c96513;
     transition: 1s ease-in-out;
-    // border: 1px solid;
+    border: 1px solid;
 
     & div {
         display: flex;
@@ -17,7 +17,7 @@
         justify-content: space-between;
         align-items: center;
         width: 80%;
-        // border: 1px solid;
+        border: 1px solid;
 
         & figure {
             margin: auto;
@@ -29,7 +29,8 @@
             & img {
                 border-radius: 15px;
                 box-shadow: 0 0 10px #000;
-                width: 100%;
+                width: 50%;
+                height: 50%;
                 opacity: 1;
                 position: relative;
                 z-index: 2; /* Colocar la imagen sobre la animación */

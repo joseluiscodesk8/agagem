@@ -6,14 +6,13 @@ import Logo from '../components/Logo';
 
 const Carrito = () => {
   const { cartItems, removeFromCart, cartCount } = useCart();
-   
+
+  const totalPrecio = cartItems.reduce((total, item) => total + parseFloat(item.price), 0).toFixed(2);
+  
   const handleRemoveFromCart = (itemId) => {
     removeFromCart(itemId);
     localStorage.setItem('cartItems', JSON.stringify(updatedCart));
   };
-
-
-
 
   return (
     <>
@@ -26,9 +25,13 @@ const Carrito = () => {
          <figure>
          <Image src={item.image} width={300} height={300} alt={`Producto ${index + 1}`} priority={false} />
          </figure>
+         <p><b>Precio:</b> {item.price} $</p>
           <button onClick={() => removeFromCart(item.id, item.origin)}>Eliminar del Carrito</button>
         </div>
       ))}
+       <div>
+          <h2>Total: {totalPrecio} </h2>
+        </div>
       <Link href='/'>Home</Link>
     </section>
     </>

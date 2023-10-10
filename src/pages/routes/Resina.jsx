@@ -1,28 +1,28 @@
 import React, { useCallback, useEffect, useRef, useState } from "react";
 import Image from "next/image";
 import { motion } from "framer-motion";
-import { useCart } from '../../Context/Cartcontext';
+import { useCart } from "../../Context/Cartcontext";
 import styles from "../../styles/index.module.scss";
 import Footer from "../components/Footer";
 
 const images = [
-  "/llaveros/k1.jpg",
-  "/llaveros/k2.jpg",
-  "/llaveros/k3.jpg",
-  "/llaveros/k4.jpg",
-  "/llaveros/k5.jpg",
-  "/llaveros/k6.jpg",
-  "/llaveros/k7.jpg",
-  "/llaveros/k8.jpg",
-  "/llaveros/k9.jpg",
-  "/llaveros/k10.jpg",
+  { src: "/llaveros/k1.jpg",  price: '20.000', addedToCart: false },
+  { src: "/llaveros/k2.jpg",  price: '20.000', addedToCart: false },
+  { src: "/llaveros/k3.jpg",  price: '20.000', addedToCart: false },
+  { src: "/llaveros/k4.jpg",  price: '20.000', addedToCart: false },
+  { src: "/llaveros/k5.jpg",  price: '20.000', addedToCart: false },
+  { src: "/llaveros/k6.jpg",  price: '20.000', addedToCart: false },
+  { src: "/llaveros/k7.jpg",  price: '20.000', addedToCart: false },
+  { src: "/llaveros/k8.jpg",  price: '20.000', addedToCart: false },
+  { src: "/llaveros/k9.jpg",  price: '20.000', addedToCart: false },
+  { src: "/llaveros/k10.jpg",  price: '20.000', addedToCart: false },
 ];
 
 const Resina = () => {
-
   const { addToCart } = useCart();
   const containerRef = useRef(null);
   const [visibleImageIndex, setVisibleImageIndex] = useState(0);
+  const [isAddingToCart, setIsAddingToCart] = useState(false);
 
   const handleScroll = useCallback(() => {
     const container = containerRef.current;
@@ -31,11 +31,11 @@ const Resina = () => {
       const containerTop = container.getBoundingClientRect().top;
       if (containerTop < windowHeight / 2) {
         if (visibleImageIndex < images.length - 1) {
-          setVisibleImageIndex(prevIndex => prevIndex + 1);
+          setVisibleImageIndex((prevIndex) => prevIndex + 1);
         }
       }
     }
-  },[visibleImageIndex])
+  }, [visibleImageIndex]);
 
   useEffect(() => {
     window.addEventListener("scroll", handleScroll);
@@ -43,13 +43,11 @@ const Resina = () => {
       window.removeEventListener("scroll", handleScroll);
     };
   }, [handleScroll]);
-  
 
-  
   return (
     <>
       <motion.section
-      ref={containerRef}
+        ref={containerRef}
         initial={{ scale: 0.5, opacity: 0 }}
         animate={{ scale: 1, opacity: 1 }}
         exit={{ scale: 0.5, opacity: 0 }}
@@ -57,17 +55,32 @@ const Resina = () => {
         className={styles.resina}
       >
         {images.slice(0, visibleImageIndex + 1).map((image, index) => (
-          <figure key={index}>
-             <Image
-              src={image}
-              alt={`Slide ${index + 1}`}
-              width={300}
-              height={300}
-              priority={false}
-              loading="lazy"
-            />
-            <button onClick={() => addToCart({ id: index, image, origin: '/routes/Resina' })}>Agregar al Carrito</button>
-          </figure>
+          <section key={index}>
+            <figure>
+              <Image
+                src={image.src}
+                alt={`Slide ${index + 1}`}
+                width={300}
+                height={300}
+                priority={false}
+                loading="lazy"
+              />
+            </figure>
+            <div>
+              <button
+                onClick={() => {
+                  addToCart({ id: index, image: image.src, price: image.price, origin: "/routes/Resina" });
+                  const updatedImages = [...images];
+                  updatedImages[index].addedToCart = true;
+                  setIsAddingToCart(true);
+                }}
+                disabled={image.addedToCart}
+              >
+                {image.addedToCart ? "Agregado" : "Agregar al Carrito"}
+              </button>
+              <p><b>Precio:</b> {image.price} $</p>
+            </div>
+          </section>
         ))}
       </motion.section>
       <Footer />
@@ -76,4 +89,3 @@ const Resina = () => {
 };
 
 export default Resina;
-
