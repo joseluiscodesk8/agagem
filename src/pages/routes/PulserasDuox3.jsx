@@ -4,7 +4,7 @@ import { motion } from "framer-motion";
 import { useCart } from '../../Context/Cartcontext';
 import styles from "../../styles/index.module.scss";
 import Footer from "../components/Footer";
-import  tiposPulserasx3  from "../products/TiposPulserasx3";
+import  tiposPulserasx3  from "../products/tiposPulserasx3";
 import { images } from "../../../next.config";
 
 const PulserasDuox3 = () => {

@@ -4,7 +4,7 @@ import { motion } from "framer-motion";
 import { useCart } from "../../Context/Cartcontext";
 import styles from "../../styles/index.module.scss";
 import Footer from "../components/Footer";
-import  llaveros  from "../products/Llaveros";
+import  llaveros  from "../products/llaveros";
 
 
 
