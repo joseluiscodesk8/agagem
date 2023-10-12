@@ -4,34 +4,21 @@ import { motion } from "framer-motion";
 import { useCart } from '../../Context/Cartcontext';
 import styles from "../../styles/index.module.scss";
 import Footer from "../components/Footer";
-
-const imagesData = [
-  "/pulseraDuox3/p1.jpg",
-  "/pulseraDuox3/p2.jpg",
-  "/pulseraDuox3/p3.jpg",
-  "/pulseraDuox3/p4.jpg",
-  "/pulseraDuox3/p5.jpg",
-  "/pulseraDuox3/p6.jpg",
-  "/pulseraDuox3/p7.jpg",
-  "/pulseraDuox3/p8.jpg",
-  "/pulseraDuox3/p9.jpg",
-];
+import  tiposPulserasx3  from "../products/TiposPulserasx3";
+import { images } from "../../../next.config";
 
 const PulserasDuox3 = () => {
 
   const { addToCart, cartItems } = useCart();
-  const [images, setImages] = useState(
-    imagesData.map((src, index) => ({
-      src: src,
-      id: index,
-      addedToCart: false,
-      price: "47.000",
-    }))
-  );
+
+  let currentPage = 1;
+  const imagesToShow = [
+    tiposPulserasx3
+  ][currentPage - 1];
 
   useEffect(() => {
     // Verificar y actualizar el estado del botón al cargar la página
-    const updatedImages = images.map((image) => {
+    const updatedImages = imagesToShow.map((image) => {
       const cartItemIndex = cartItems.findIndex(
         (item) => item.id === image.id && item.origin === "/routes/PulserasDuox3"
       );
@@ -40,20 +27,18 @@ const PulserasDuox3 = () => {
         addedToCart: cartItemIndex !== -1,
       };
     });
-    setImages(updatedImages);
-  }, [cartItems]);
+  }, [cartItems, imagesToShow]);
 
   const handleAddToCart = (index) => {
     addToCart({
       id: index,
-      image: images[index].src,
-      price: images[index].price,
+      image: imagesToShow[index].src,
+      price: imagesToShow[index].price,
       origin: "/routes/PulserasDuox3",
     });
 
-    const updatedImages = [...images];
+    const updatedImages = [...imagesToShow];
     updatedImages[index].addedToCart = true;
-    setImages(updatedImages);
   };
 
   return (
@@ -65,7 +50,7 @@ const PulserasDuox3 = () => {
       transition={{ duration: 0.5 }}
       className={styles.resina}
     >
-      {images.map((image, index) => (
+      {imagesToShow.map((image, index) => (
           <section key={index}>
           <figure>
             <Image
@@ -73,7 +58,6 @@ const PulserasDuox3 = () => {
               alt={`Slide ${index + 1}`}
               width={300}
               height={300}
-              priority={false}
               loading="lazy"
             />
           </figure>
@@ -88,9 +72,7 @@ const PulserasDuox3 = () => {
               <b>Precio:</b> {image.price} $
             </h3>
           </div>
-          <p>
-              <b>Pulseras dúox3:</b> 3 pulseras tejidas en hilo celular coreano con 6 piedras de murano cada una, separadores en acero y oro goldfield con 3 dijes de zamak.
-            </p>
+          <p>{image.description}</p>
         </section>
       ))}
     </motion.section>

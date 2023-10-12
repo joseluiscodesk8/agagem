@@ -1,9 +1,7 @@
 /** @type {import('next').NextConfig} */
 const nextConfig = {
   reactStrictMode: true,
-  images: {
-    domains: ['i.imgur.com'], // Agrega el dominio de host de la imagen aquí
-  },
+  pageExtensions: ['jsx'],
 }
 module.exports = {
   webpack(config, options) {

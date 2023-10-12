@@ -1,59 +1,44 @@
-import React, { useCallback, useEffect, useState } from "react";
+import React, { useCallback, useEffect, useRef, useState } from "react";
 import Image from "next/image";
 import { motion } from "framer-motion";
 import { useCart } from "../../Context/Cartcontext";
 import styles from "../../styles/index.module.scss";
 import Footer from "../components/Footer";
+import  llaveros  from "../products/Llaveros";
 
-const imagesData = [
-  "/llaveros/k1.jpg",
-  "/llaveros/k2.jpg",
-  "/llaveros/k3.jpg",
-  "/llaveros/k4.jpg",
-  "/llaveros/k5.jpg",
-  "/llaveros/k6.jpg",
-  "/llaveros/k7.jpg",
-  "/llaveros/k8.jpg",
-  "/llaveros/k9.jpg",
-  "/llaveros/k10.jpg",
-];
+
 
 const Resina = () => {
   const { addToCart, cartItems } = useCart();
-  const [images, setImages] = useState(
-    imagesData.map((src, index) => ({
-      src: src,
-      id: index,
-      addedToCart: false,
-      price: "20.000",
-    }))
-  );
+
+  let currentPage = 1;
+  const imagesToShow = [
+    llaveros
+  ][currentPage - 1];
 
   useEffect(() => {
     // Verificar y actualizar el estado del botón al cargar la página
-    const updatedImages = images.map((image) => {
+    const updatedImages = imagesToShow.map((image) => {
       const cartItemIndex = cartItems.findIndex(
-        (item) => item.id === image.id && item.origin === "/routes/PulserasDuo"
+        (item) => item.id === image.id && item.origin === "/routes/Resina"
       );
       return {
         ...image,
         addedToCart: cartItemIndex !== -1,
       };
     });
-    setImages(updatedImages);
-  }, [cartItems]);
+  }, [cartItems, imagesToShow]);
 
   const handleAddToCart = (index) => {
     addToCart({
       id: index,
-      image: images[index].src,
-      price: images[index].price,
-      origin: "/routes/PulserasDuo",
+      image: imagesToShow[index].src,
+      price: imagesToShow[index].price,
+      origin: "/routes/Resina",
     });
 
-    const updatedImages = [...images];
+    const updatedImages = [...imagesToShow];
     updatedImages[index].addedToCart = true;
-    setImages(updatedImages);
   };
 
   return (
@@ -65,7 +50,7 @@ const Resina = () => {
         transition={{ duration: 0.5 }}
         className={styles.resina}
       >
-        {images.map((image, index) => (
+        {imagesToShow.map((image, index) => (
           <section key={index}>
             <figure>
               <Image
@@ -73,7 +58,6 @@ const Resina = () => {
                 alt={`Slide ${index + 1}`}
                 width={300}
                 height={300}
-                priority={false}
                 loading="lazy"
               />
             </figure>
@@ -88,10 +72,7 @@ const Resina = () => {
                 <b>Precio:</b> {image.price} $
               </h4>
             </div>
-            <p>
-              <b>Llaveros en resina:</b> con la inicial de tu nombre con los
-              colores y incrustaciones de tu preferencia con cuencas acrílicas luminosas en la oscuridad  borla y un detalle
-              adicional.
+            <p>{image.description}
             </p>
           </section>
         ))}

@@ -7,6 +7,7 @@ import Footer from "../components/Footer";
 
 const Carrito = () => {
   const { cartItems, removeFromCart, cartCount } = useCart();
+  
 
   const totalPrecio = cartItems
     .reduce((total, item) => total + parseFloat(item.price), 0)
