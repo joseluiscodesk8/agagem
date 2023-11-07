@@ -1,14 +1,14 @@
 const llaveros = [
   {
     id: 1,
-    src: "/llaveros/k1.jpg",
+    src: "https://i.ibb.co/60hfGJG/k1.jpg",
     price: "20.000",
     description:
       "llaveros en resina personalizados con la inicial de tu nombre y colgante en cuencas que brillan en la oscuridad, borla y detalle adicional. Preguntar por colores disponibles.",
   },
   {
     id: 2,
-    src: "/llaveros/b1.jpg",
+    src: "https://i.ibb.co/48RXCr2/b1.jpg",
     price: "18.000",
     description:
       "Lapiceros Personalizados en resina, tinta intercambiable, su color, incrustaciones y colgantes pueden cambiar según tu gusto. Preguntar por colores disponibles.",

@@ -43,8 +43,8 @@ export const CartProvider = ({ children }) => {
     }
   };
 
-  const removeFromCart = (itemId, itemOrigin) => {
-    const updatedCart = cartItems.filter((item) => !(item.id === itemId && item.origin === itemOrigin));
+  const removeFromCart = (itemId) => {
+    const updatedCart = cartItems.filter((item) => !(item.id === itemId));
     setCartItems(updatedCart);
     localStorage.setItem('cartItems', JSON.stringify(updatedCart))
   };

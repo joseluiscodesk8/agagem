@@ -1,0 +1,418 @@
+@charset "UTF-8";
+.cartContainer {
+  width: 100%;
+  height: 40px;
+  position: fixed;
+  z-index: 1000;
+}
+.cartContainer .itemsContainer {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: 85%;
+  margin: auto;
+  max-width: 500px;
+  transform: translate(0, 10px);
+}
+.cartContainer .itemsContainer section:nth-child(1) {
+  display: grid;
+  place-content: center;
+  color: #462810;
+  font-size: 1.2rem;
+  width: 40px;
+  height: 40px;
+  background: #f3cfb1;
+  border-radius: 20px;
+}
+.cartContainer .itemsContainer section:nth-child(1):active {
+  scale: 0.8;
+}
+.cartContainer .itemsContainer section:nth-child(1) div {
+  display: grid;
+  place-content: center;
+  position: absolute;
+  transform: translate(25px, -5px);
+  color: #fff;
+  width: 20px;
+  height: 20px;
+  border-radius: 10px;
+  background: #c96513;
+}
+.cartContainer .itemsContainer section:nth-child(1) div span {
+  font-size: 0.8rem;
+}
+.cartContainer .itemsContainer section:nth-child(2) {
+  color: #462810;
+  font-weight: 700;
+}
+
+.navContainer {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin: auto;
+  width: 90%;
+  max-width: 500px;
+  overflow: hidden;
+  position: relative;
+  height: 40px;
+}
+.navContainer .nav_agagem {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  transform: translateY(0);
+  width: 50%;
+  height: 100%;
+  overflow: hidden;
+}
+.navContainer .nav_agagem ul {
+  display: flex;
+  flex-direction: column;
+}
+.navContainer .nav_agagem ul li {
+  display: grid;
+  place-content: center;
+  height: 40px;
+  border-radius: 5px;
+  border: 1px solid #fcebdd;
+  box-shadow: inset 0 0 15px #e2b795;
+  color: #462810;
+  letter-spacing: 1px;
+  font-family: Arial, Helvetica, sans-serif;
+}
+.navContainer .navArrow {
+  display: grid;
+  place-content: center;
+  cursor: pointer;
+  font-size: 1.1rem;
+  -webkit-user-select: none;
+     -moz-user-select: none;
+          user-select: none;
+  border: none;
+  width: 30px;
+  height: 30px;
+  border-radius: 10px;
+  color: #462810;
+  background: transparent;
+}
+.navContainer .navArrow:active {
+  scale: 1.4;
+}
+
+.resina {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  height: 100%;
+  margin: 20px auto;
+  position: relative;
+}
+.resina section figure {
+  margin: auto;
+  width: 80%;
+  height: auto;
+  max-width: 280px;
+  position: relative;
+}
+.resina section figure img {
+  border-radius: 15px;
+  box-shadow: 0 0 10px #000;
+  width: 100%;
+  height: auto;
+  position: relative;
+  z-index: 2; /* Colocar la imagen sobre la animación */
+}
+.resina section figure::before {
+  content: "";
+  position: absolute;
+  top: 2%;
+  width: 100%;
+  height: 77%;
+  border-radius: 15px;
+  background: rgba(112, 111, 111, 0.8); /* Fondo semi-transparente */
+  z-index: 1; /* Colocar detrás de la imagen */
+  animation: loading 2s linear infinite; /* Animación de carga */
+  transition: animation 0.3s ease-in-out;
+}
+.resina section div {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: 280px;
+  height: 60px;
+  margin: auto;
+  color: #462810;
+}
+.resina section div button {
+  width: 120px;
+  height: 22px;
+  border-radius: 15px;
+  border-color: #c96513;
+  color: #462810;
+  background: transparent;
+  position: relative;
+  z-index: 10000;
+  transition: 0.5s ease-in-out;
+}
+.resina section div button:active {
+  scale: 0.8;
+}
+.resina section p {
+  margin: auto;
+  width: 280px;
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: 0.8rem;
+  color: #462810;
+}
+@keyframes loading {
+  0%, 100% {
+    opacity: 0.1;
+    background: rgba(112, 111, 111, 0.8);
+  }
+  50% {
+    opacity: 1;
+    background: rgba(44, 42, 42, 0.8);
+  }
+}
+
+.sesionContainer {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-evenly;
+  width: 80%;
+  max-width: 500px;
+  height: 60vh;
+  margin: 20px auto;
+  border-radius: 20px;
+  box-shadow: inset 0 0 10px #bd5908;
+}
+.sesionContainer .inputContainer {
+  display: grid;
+  place-content: center;
+  width: 155px;
+  position: relative;
+}
+.sesionContainer .inputContainer label {
+  position: absolute;
+  transform: translate(2px, 6px);
+  pointer-events: none;
+  transition: all 0.5s ease;
+}
+.sesionContainer .inputContainer input {
+  width: 160px;
+  height: 30px;
+  border-radius: 5px;
+  border: none;
+  background: #fcebdd;
+  transition: 0.5s ease-in-out;
+}
+.sesionContainer .inputContainer input:focus {
+  background: #fff;
+}
+.sesionContainer .inputContainer .labelUp {
+  transform: translate(0, -17px);
+  font-size: 0.8rem;
+}
+.sesionContainer button {
+  width: 120px;
+  border-radius: 15px;
+  border-color: #c96513;
+  color: #462810;
+  background: transparent;
+}
+.sesionContainer div {
+  display: flex;
+  width: 150px;
+  justify-content: space-evenly;
+  color: #000;
+  cursor: pointer;
+}
+
+.RegisterContainer {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-evenly;
+  width: 80%;
+  max-width: 400px;
+  height: 90vh;
+  color: #462810;
+  margin: 20px auto;
+  border-radius: 20px;
+  box-shadow: inset 0 0 10px #bd5908;
+  background-image: url("/agagem4.jpg");
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+.RegisterContainer form {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-evenly;
+  width: 100%;
+  height: 80%;
+}
+.RegisterContainer form .inputContainer {
+  display: grid;
+  place-content: center;
+  width: 155px;
+  position: relative;
+}
+.RegisterContainer form .inputContainer label {
+  position: absolute;
+  transform: translate(2px, 6px);
+  pointer-events: none;
+  color: #000;
+  transition: all 0.5s ease;
+  border-bottom: 1px solid #c96513;
+}
+.RegisterContainer form .inputContainer input {
+  width: 160px;
+  height: 30px;
+  border-radius: 5px;
+  border: none;
+  background: transparent;
+  transition: 0.5s ease-in-out;
+}
+.RegisterContainer form .inputContainer input:focus {
+  background: #fff;
+}
+.RegisterContainer form .inputContainer .labelUp {
+  transform: translate(0, -17px);
+  font-size: 0.8rem;
+  border-bottom: none;
+}
+.RegisterContainer form button {
+  width: 120px;
+  border-radius: 15px;
+  border-color: #c96513;
+  color: #462810;
+  background: transparent;
+}
+.RegisterContainer div {
+  display: flex;
+  width: 150px;
+  justify-content: space-evenly;
+  color: #000;
+  cursor: pointer;
+}
+
+.carritoContainer {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+  gap: 20px;
+  max-width: 500px;
+  margin: auto;
+  padding: 1%;
+  color: #462810;
+  font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen, Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serif;
+}
+.carritoContainer section {
+  display: flex;
+  justify-content: space-evenly;
+  align-items: center;
+  width: 80%;
+}
+.carritoContainer section figure {
+  width: 50%;
+}
+.carritoContainer section figure img {
+  width: 50px;
+  height: 50%;
+  opacity: 1;
+  position: relative;
+  z-index: 2; /* Colocar la imagen sobre la animación */
+}
+.carritoContainer section button {
+  width: 140px;
+  border-radius: 15px;
+  border-color: #c96513;
+  color: #c96513;
+  margin: 20px auto;
+  background: transparent;
+  transition: 0.5s ease-in-out;
+}
+.carritoContainer section button:active {
+  scale: 0.9;
+}
+.carritoContainer div {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 10px;
+  width: 280px;
+  height: 70px;
+  border-bottom: 1px solid;
+}
+
+.agagemFooter {
+  display: flex;
+  justify-content: space-around;
+  flex-direction: column;
+  width: 100%;
+  height: 350px;
+  box-shadow: inset 0 0 25px #eebf98;
+  overflow: hidden;
+}
+@media screen and (min-width: 768px) {
+  .agagemFooter {
+    flex-direction: row;
+  }
+}
+.agagemFooter .agagemContainer {
+  width: 100%;
+  max-width: 350px;
+  height: 300px;
+  margin: auto;
+  position: relative;
+}
+.agagemFooter .agagemContainer section {
+  display: flex;
+  justify-content: space-evenly;
+  flex-direction: column;
+  align-items: center;
+  width: 90%;
+  height: 100%;
+  max-width: 320px;
+  margin: auto;
+}
+.agagemFooter .agagemContainer section .footerContent {
+  display: flex;
+  justify-content: space-around;
+  flex-direction: column;
+  width: 100%;
+  height: 180px;
+  color: #462810;
+  font-family: Arial, Helvetica, sans-serif;
+  padding: 0.5%;
+}
+.agagemFooter button {
+  width: 120px;
+  padding: 0.4%;
+  border-radius: 15px;
+  border-color: #c96513;
+  color: #462810;
+  margin: 20px auto;
+  background: transparent;
+}
+.agagemFooter div {
+  border: 1px solid;
+}
+
+.formulario {
+  max-width: 290px;
+  height: 200px;
+  position: absolute;
+  z-index: 10000;
+  background: #fcebdd;
+  border-radius: 15px;
+  box-shadow: inset 0 0 15px #bd5908;
+}
+.formulario form {
+  display: grid;
+  width: 90%;
+}/*# sourceMappingURL=index.module.css.map */

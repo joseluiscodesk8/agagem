@@ -1,4 +1,5 @@
 import Head from "next/head";
+import Link from "next/link";
 import Image from "next/image";
 import { TfiEmail, TfiInstagram, TfiLocationPin } from 'react-icons/tfi';
 import { BsPhone } from 'react-icons/bs';
@@ -32,6 +33,10 @@ const Footer = () => {
         </section>
 
         </section>
+
+        <span>Realizado por José luís Gómez: 
+        <Link href="https://webdesignerfreelancer.netlify.app/" target="blank_"> webdesigner.com</Link>
+        </span>
       </footer>
     </>
   );

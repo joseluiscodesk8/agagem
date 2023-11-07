@@ -2,6 +2,9 @@
 const nextConfig = {
   reactStrictMode: true,
   pageExtensions: ['jsx'],
+  images: {
+    domains: ['i.ibb.co'], // Agrega el dominio de imgur aquí
+  },
 }
 module.exports = {
   webpack(config, options) {
