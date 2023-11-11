@@ -11,7 +11,7 @@ export default function App({ Component, pageProps }) {
 
   const router = useRouter();
 
-  const pagesWithoutNavbar = ['/routes/Carrito', '/routes/Login', '/routes/Register'];
+  const pagesWithoutNavbar = ['/routes/Carrito', '/routes/Login', '/routes/Register', '/404'];
   const pagesWithoutSesion = ['/routes/Carrito', '/routes/Login'];
   const pagesWithoutcart = ['/routes/Login']
 
