@@ -1,7 +1,5 @@
 import Link from "next/link";
-import Image from "next/image";
-import { TfiEmail, TfiInstagram, TfiLocationPin } from "react-icons/tfi";
-import { BsPhone } from "react-icons/bs";
+import LazyImage from "./LazyImagen";
 import styles from "../../styles/index.module.scss";
 
 const Footer = () => {
@@ -13,23 +11,43 @@ const Footer = () => {
             <div className={styles.footerContent}>
               <h3>Agagem Arte y Accesorios</h3>
               <p>
-                <TfiLocationPin /> Medellin Antioquia
+              <LazyImage
+                src="/gps.png"
+                width={20} height={20}
+                alt="icon"
+              /> Medellin Antioquia
               </p>
               <p>
-                <TfiEmail /> agagem2023@gmail.com
+              <LazyImage
+                src="/letter.png"
+                width={20} height={20}
+                alt="icon"
+              /> agagem2023@gmail.com
               </p>
               <p>
-                <BsPhone /> 3232882017
+              <LazyImage
+                src="/cell.png"
+                width={20} height={20}
+                alt="icon"
+              /> 3232882017
               </p>
               <p>
-                <TfiInstagram />{" "}
+              <LazyImage
+                src="/insta.png"
+                width={20} height={20}
+                alt="icon"
+              />{" "}
                 <a href="https://instagram.com/agagem_?igshid=MzRlODBiNWFlZA==">
                   @agegem_
                 </a>
               </p>
             </div>
             <div className={styles.footerImage}>
-              <Image src="/agagem3.png" width={112} height={63} alt="loco" />
+              <LazyImage
+                src="/agagem3.png"
+                width={112} height={63}
+                alt="icon"
+              />
             </div>
           </section>
         </section>
