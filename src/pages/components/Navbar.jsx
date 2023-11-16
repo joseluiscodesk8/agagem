@@ -11,11 +11,11 @@ const Navbar = () => {
     () => [
       { label: "Home", href: "/" },
       { label: "Resina", href: "/routes/Resina" },
-      { label: "pulseras_duo", href: "/routes/PulserasDuo" },
-      { label: "pulseras_duox3", href: "/routes/PulserasDuox3" },
+      { label: "pulseras_duo", href: "/routes/pulserasDuo" },
+      { label: "pulseras_duox3", href: "/routes/pulserasDuox3" },
       { label: "candongas", href: "/routes/Candongas" },
-      { label: "topos", href: "/routes/Topos"},
-      { label: "tobilleras", href: "/routes/Tobilleras"},
+      { label: "topos", href: "/routes/Topos" },
+      { label: "tobilleras", href: "/routes/Tobilleras" },
     ],
     []
   );
@@ -58,7 +58,11 @@ const Navbar = () => {
       <CartAndSesion />
       <Logo />
       <section className={styles.navContainer}>
-        <button className={styles.navArrow} onClick={handleMoveUp}>
+        <button
+          className={styles.navArrow}
+          onClick={handleMoveUp}
+          aria-label="Mover hacia arriba"
+        >
           <FiChevronUp />
         </button>
 
@@ -77,7 +81,11 @@ const Navbar = () => {
           </ul>
         </nav>
 
-        <button className={styles.navArrow} onClick={handleMoveDown}>
+        <button
+          className={styles.navArrow}
+          onClick={handleMoveDown}
+          aria-label="Mover hacia abajo"
+        >
           <FiChevronDown />
         </button>
       </section>

@@ -3,7 +3,11 @@ const nextConfig = {
   reactStrictMode: true,
   pageExtensions: ['jsx'],
   images: {
-    domains: ['i.ibb.co'], // Agrega el dominio de imgur aquí
+    remotePatterns: [
+      {
+        hostname: 'i.ibb.co',
+      },
+    ],
   },
 }
 module.exports = {

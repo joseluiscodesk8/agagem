@@ -1,7 +1,7 @@
 import React, { useEffect } from "react";
 import { useCart } from "../../Context/Cartcontext";
 import Link from "next/link";
-import { BsBasket } from "react-icons/bs";
+import Image from "next/image";
 import styles from "../../styles/index.module.scss";
 
 const CartAndSesion = () => {
@@ -13,27 +13,27 @@ const CartAndSesion = () => {
     if (storedLoggedInUser) {
       setLoggedInUser(storedLoggedInUser);
     }
-  }, [setLoggedInUser]); 
-  
+  }, [setLoggedInUser]);
+
   return (
     <>
       <section className={styles.cartContainer}>
         <section className={styles.itemsContainer}>
-
-        <section>
-          <Link href="/routes/Carrito" className="cartIcon"><BsBasket /></Link>
-          <div>
-          <span>{cartCount}</span>
-          </div>
-        </section>
-        <section>
-        {loggedInUser ? (
-            <Link href={'/routes/Login'}>{loggedInUser}</Link>
-          ) : (
-            <Link href={'/routes/Login'}>Log In</Link>
-          )}
-        </section>
-        
+          <section>
+            <Link href="/routes/Carrito" className="cartIcon" aria-label="icon">
+              <Image src="/basket.png" alt="icon" width={22} height={22} />
+            </Link>
+            <div>
+              <span>{cartCount}</span>
+            </div>
+          </section>
+          <section>
+            {loggedInUser ? (
+              <Link href={"/routes/Login"}>{loggedInUser}</Link>
+            ) : (
+              <Link href={"/routes/Login"}>Log In</Link>
+            )}
+          </section>
         </section>
       </section>
     </>

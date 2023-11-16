@@ -5,11 +5,11 @@
   height: 100%;
   margin: 20px auto;
   position: relative;
-  //border: 1px solid;
+  // border: 1px solid;
 
   & section {
     //border: 1px solid;
-    & figure {
+    & picture {
       margin: auto;
       width: 80%;
       height: auto;
@@ -85,6 +85,40 @@
     50% {
       opacity: 1;
       background: rgba(44, 42, 42, 0.8);
+    }
+  }
+
+  @media (min-width: 768px) {
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: center;
+    section {
+
+      & figure {
+        margin: auto;
+        width: 80%;
+        height: 250px;
+        max-width: 280px;
+        position: relative;
+
+        & img {
+          height: 100%;
+        }
+      }
+
+      & div {
+        width: 230px;
+        font-size: 0.8rem;
+
+        & button {
+          width: 100px;
+          font-size: 0.6rem;
+        }
+      }
+
+      & p {
+        width: 240px;
+      }
     }
   }
 }
