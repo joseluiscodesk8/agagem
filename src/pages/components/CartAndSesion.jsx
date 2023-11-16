@@ -21,7 +21,7 @@ const CartAndSesion = () => {
         <section className={styles.itemsContainer}>
           <section>
             <Link href="/routes/Carrito" className="cartIcon" aria-label="icon">
-              <Image src="/basket.png" alt="icon" width={22} height={22} />
+              <Image src="/icons/basket.png" alt="icon" width={22} height={22} />
             </Link>
             <div>
               <span>{cartCount}</span>
