@@ -10,41 +10,43 @@ const Footer = () => {
           <section>
             <div className={styles.footerContent}>
               <h3>Agagem Arte y Accesorios</h3>
-              <p>
+              <span>
               <LazyImage
-                src="/gps.png"
+                src="/icons/gps.png"
                 width={20} height={20}
                 alt="icon"
               /> Medellin Antioquia
-              </p>
-              <p>
+              </span>
+              <span>
               <LazyImage
-                src="/letter.png"
+                src="/icons/letter.png"
                 width={20} height={20}
                 alt="icon"
               /> agagem2023@gmail.com
-              </p>
-              <p>
+              </span>
+              <span>
               <LazyImage
-                src="/cell.png"
+                src="/icons/cell.png"
                 width={20} height={20}
                 alt="icon"
               /> 3232882017
-              </p>
-              <p>
+              </span>
+              <span>
               <LazyImage
-                src="/insta.png"
+                src="/icons/insta.png"
                 width={20} height={20}
                 alt="icon"
               />{" "}
                 <a href="https://instagram.com/agagem_?igshid=MzRlODBiNWFlZA==">
                   @agegem_
                 </a>
-              </p>
+              </span>
+
+
             </div>
             <div className={styles.footerImage}>
               <LazyImage
-                src="/agagem3.png"
+                src="/logos/agagem3.png"
                 width={112} height={63}
                 alt="icon"
               />
@@ -52,7 +54,7 @@ const Footer = () => {
           </section>
         </section>
 
-        <span>
+        <span className={styles.contact}>
           Realizado por José luís Gómez:
           <Link
             href="https://webdesignerfreelancer.netlify.app/"

@@ -60,8 +60,8 @@ const Carrito = () => {
             <picture>
               <Image
                 src={item.image}
-                width={300}
-                height={300}
+                width={50}
+                height={50}
                 alt={`Producto ${index + 1}`}
                 priority={false}
               />

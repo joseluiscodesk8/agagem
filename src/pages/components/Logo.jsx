@@ -1,12 +1,13 @@
-import Image from "next/image";
+import styles from "../../styles/index.module.scss";
+import LazyImage from "./LazyImagen";
 
 const Logo = () => {
   return (
     <>
-      <picture>
-        <Image
-          className="logoAgagem"
-          src="/agagem2.webP"
+      <picture className={styles.logoAgagem}>
+      <source media="(min-width: 800px)"srcSet="/agagem2.webP" />
+      <LazyImage
+          src="/logos/agagem3.webP"
           alt="agagem"
           width={230}
           height={140}
