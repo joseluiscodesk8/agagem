@@ -19,7 +19,7 @@ const PulseraDuo = () => {
     // Verificar y actualizar el estado del botón al cargar la página
     const updatedImages = imagesToShow.map((image) => {
       const cartItemIndex = cartItems.findIndex(
-        (item) => item.id === image.id && item.origin === "/routes/pulserasDuo"
+        (item) => item.id === image.id && item.origin === "/routes/PulserasDuo"
       );
       return {
         ...image,
@@ -33,7 +33,7 @@ const PulseraDuo = () => {
       id: index,
       image: imagesToShow[index].src,
       price: imagesToShow[index].price,
-      origin: "/routes/pulserasDuo",
+      origin: "/routes/PulserasDuo",
     });
 
     const updatedImages = [...imagesToShow];

@@ -19,7 +19,7 @@ const PulserasDuox3 = () => {
     const updatedImages = imagesToShow.map((image) => {
       const cartItemIndex = cartItems.findIndex(
         (item) =>
-          item.id === image.id && item.origin === "/routes/pulserasDuox3"
+          item.id === image.id && item.origin === "/routes/PulserasDuox3"
       );
       return {
         ...image,
@@ -33,7 +33,7 @@ const PulserasDuox3 = () => {
       id: index,
       image: imagesToShow[index].src,
       price: imagesToShow[index].price,
-      origin: "/routes/pulserasDuox3",
+      origin: "/routes/PulserasDuox3",
     });
 
     const updatedImages = [...imagesToShow];

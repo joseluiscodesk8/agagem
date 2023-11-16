@@ -11,11 +11,11 @@ const Navbar = () => {
     () => [
       { label: "Home", href: "/" },
       { label: "Resina", href: "/routes/Resina" },
-      { label: "pulseras_duo", href: "/routes/pulserasDuo" },
-      { label: "pulseras_duox3", href: "/routes/pulserasDuox3" },
-      { label: "candongas", href: "/routes/Candongas" },
-      { label: "topos", href: "/routes/Topos" },
-      { label: "tobilleras", href: "/routes/Tobilleras" },
+      { label: "Pulseras_duo", href: "/routes/PulserasDuo" },
+      { label: "Pulseras_duox3", href: "/routes/PulserasDuox3" },
+      { label: "Candongas", href: "/routes/Candongas" },
+      { label: "Topos", href: "/routes/Topos" },
+      { label: "Tobilleras", href: "/routes/Tobilleras" },
     ],
     []
   );
