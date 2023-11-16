@@ -1,5 +1,6 @@
+/* eslint-disable @next/next/no-img-element */
 import React, { useEffect, useRef } from "react";
-import Image from "next/image";
+
 
 const LazyImage = ({ src, alt, width = 300, height = 300 }) => {
   const imageRef = useRef();
@@ -21,7 +22,7 @@ const LazyImage = ({ src, alt, width = 300, height = 300 }) => {
     };
   }, [src]);
 
-  return <Image src={src} ref={imageRef} alt={alt} width={width} height={height} />;
+  return <img  ref={imageRef} alt={alt} width={width} height={height} />;
 };
 
 export default LazyImage;
