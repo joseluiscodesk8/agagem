@@ -53,6 +53,8 @@ const Navbar = () => {
     }
   };
 
+  const windowWidth = typeof window !== "undefined" ? window.innerWidth : 0;
+
   return (
     <>
       <CartAndSesion />
@@ -68,8 +70,11 @@ const Navbar = () => {
 
         <nav className={styles.nav_agagem}>
           <ul
-            style={{
-              transform: `translateY(-${menuPosition * 40}px)`,
+             style={{
+              transform:
+                windowWidth <= 900
+                  ? `translateY(-${menuPosition * 40}px)`
+                  : "none", // No transform if window width is greater than 900px
               transition: "transform 0.4s ease-in-out",
             }}
           >

@@ -6,6 +6,9 @@
   height: 350px;
   box-shadow: inset 0 0 25px #eebf98;
   overflow: hidden;
+  position: relative;
+  z-index: 1000;
+
 
 
   & .agagemContainer {

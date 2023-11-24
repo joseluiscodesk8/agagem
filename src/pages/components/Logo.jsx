@@ -5,7 +5,7 @@ const Logo = () => {
   return (
     <>
       <picture className={styles.logoAgagem}>
-      <source media="(min-width: 800px)"srcSet="/logos/agagem2.webP" />
+      <source media="(min-width: 900px)"srcSet="/logos/agagem2.webP" />
       <LazyImage
           src="/logos/agagem3.webP"
           alt="agagem"

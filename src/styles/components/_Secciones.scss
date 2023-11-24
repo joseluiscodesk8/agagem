@@ -7,6 +7,15 @@
   position: relative;
   // border: 1px solid;
 
+  @media screen and (min-width: 900px) {
+    margin: 0;
+    left: 250px;
+    width: 600px;
+    height: 360px;
+    overflow-y: scroll;
+    scroll-behavior: smooth;
+  }
+
   & section {
     //border: 1px solid;
     & picture {
@@ -17,13 +26,17 @@
       position: relative;
       // border: 1px solid;
 
+      @media screen and (min-width: 900px) {
+        margin: 20px auto;
+      }
+
       & img {
         border-radius: 15px;
         box-shadow: 0 0 10px #000;
         width: 100%;
         height: auto;
         position: relative;
-        z-index: 2; /* Colocar la imagen sobre la animación */
+        z-index: 2;
       }
 
       &::before {

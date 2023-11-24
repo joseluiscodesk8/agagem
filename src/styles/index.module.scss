@@ -6,7 +6,25 @@
 @use "./components/Formulario";
 @use "./components/cuatroCeroCuatro";
 
+.home {
+    @media screen and (min-width: 900px) {
+        transform: translate(100px, -45px);
+        // border: 1px solid;
+    }
+}
+
 .logoAgagem {
     width: 250px;
     margin: auto;
+
+    @media screen and (min-width: 900px) {
+        margin: 0;
+        transform: translate(55px);
+
+        & img {
+            width: 150px;
+            height: 90px;
+        }
+    }
 }
+

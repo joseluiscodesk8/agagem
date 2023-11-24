@@ -1,6 +1,7 @@
 import Head from "next/head";
 import Image from "next/image";
 import { motion } from "framer-motion";
+import styles from "../styles/index.module.scss";
 import Footer from "./components/Footer";
 
 export default function Home() {
@@ -8,7 +9,6 @@ export default function Home() {
     hidden: { opacity: 0 },
     visible: { opacity: 1 },
   };
-  
 
   return (
     <>
@@ -23,19 +23,21 @@ export default function Home() {
         variants={itemVariants}
         transition={{ duration: 0.5 }}
       >
-        <h3>Bienvenidos a AGAGEM</h3>
-        <p>
-          Somos una empresa creada en 2023 por Astrid Gómez y Genesis Miranda,
-          dos mujeres amantes de los diseños de bisutería y la resina.
-        </p>
-        <h3>Productos</h3>
-        <p>
-          En nuestro portal, puedes encontrar una variedad de productos de
-          bisutería y resina. Todo puede ser personalizado según tus gustos. En
-          la resina, puedes escoger colores, incrustaciones y más. En las
-          pulseras, pregunta por los colores disponibles; los dijes pueden
-          variar según el inventario.
-        </p>
+        <main className={styles.home}>
+          <h3>Bienvenidos a AGAGEM</h3>
+          <p>
+            Somos una empresa creada en 2023 por Astrid Gómez y Genesis Miranda,
+            dos mujeres amantes de los diseños de bisutería y la resina.
+          </p>
+          <h3>Productos</h3>
+          <p>
+            En nuestro portal, puedes encontrar una variedad de productos de
+            bisutería y resina. Todo puede ser personalizado según tus gustos.
+            En la resina, puedes escoger colores, incrustaciones y más. En las
+            pulseras, pregunta por los colores disponibles; los dijes pueden
+            variar según el inventario.
+          </p>
+        </main>
       </motion.main>
       <Footer />
     </>
