@@ -66,7 +66,7 @@ const Resina = () => {
                 onClick={() => handleAddToCart(index)}
                 disabled={image.addedToCart}
               >
-                {image.addedToCart ? "Agregado" : "Agregar al Carrito"}
+                <span>{image.addedToCart ? "Agregado" : "Agregar al Carrito"}</span>
               </button>
               <h4>
                 <b>Precio:</b> {image.price} $

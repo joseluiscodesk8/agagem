@@ -8,23 +8,21 @@
 
 .home {
     @media screen and (min-width: 900px) {
-        transform: translate(100px, -45px);
-        // border: 1px solid;
+        position: absolute;
+        height: 250px;
+        transform: translate(500px);
+    }
+
+    & section {
+        display: flex;
+        height: 100%;
+        flex-direction: column;
+        justify-content: space-evenly;
     }
 }
 
 .logoAgagem {
     width: 250px;
     margin: auto;
-
-    @media screen and (min-width: 900px) {
-        margin: 0;
-        transform: translate(55px);
-
-        & img {
-            width: 150px;
-            height: 90px;
-        }
-    }
 }
 
