@@ -3,7 +3,6 @@
 import Link from "next/link";
 import { useState, useEffect } from "react";
 import { motion } from "framer-motion";
-import { useCart } from "@/context/CartContext";
 import Logo from "@/components/Logo";
 import styles from "./login.module.scss";
 

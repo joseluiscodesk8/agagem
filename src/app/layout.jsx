@@ -1,5 +1,4 @@
 import "@/styles/globals.scss";
-import { CartProvider } from "@/context/CartContext";
 
 export const metadata = {
   title: {
@@ -14,7 +13,7 @@ export default function RootLayout({ children }) {
   return (
     <html lang="es">
       <body>
-        <CartProvider>{children}</CartProvider>
+        {children}
       </body>
     </html>
   );

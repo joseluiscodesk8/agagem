@@ -5,7 +5,6 @@ import { useSearchParams } from "next/navigation";
 import Link from "next/link";
 import Image from "next/image";
 import { motion } from "framer-motion";
-import { useCart } from "@/context/CartContext";
 import { parsePrice, formatPrice } from "@/lib/money";
 import styles from "./checkout.module.scss";
 

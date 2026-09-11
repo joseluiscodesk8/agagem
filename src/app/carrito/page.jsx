@@ -3,7 +3,6 @@
 import Image from "next/image";
 import Link from "next/link";
 import { motion } from "framer-motion";
-import { useCart } from "@/context/CartContext";
 import { parsePrice, formatPrice } from "@/lib/money";
 import styles from "./carrito.module.scss";
 

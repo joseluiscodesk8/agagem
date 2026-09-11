@@ -4,7 +4,6 @@ import { useEffect, useState } from "react";
 import Link from "next/link";
 import { useRouter } from "next/navigation";
 import { motion } from "framer-motion";
-import { useCart } from "@/context/CartContext";
 import { ORDER_STATUS } from "@/lib/orders";
 import { formatPrice } from "@/lib/money";
 import styles from "./cuenta.module.scss";
