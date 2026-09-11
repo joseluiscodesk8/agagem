@@ -4,6 +4,7 @@ import Link from "next/link";
 import { useState, useEffect } from "react";
 import { motion } from "framer-motion";
 import Logo from "@/components/Logo";
+import { useCart } from "@/lib/useCart";
 import styles from "./login.module.scss";
 
 const Login = () => {

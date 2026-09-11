@@ -6,6 +6,7 @@ import { useRouter } from "next/navigation";
 import { motion } from "framer-motion";
 import { ORDER_STATUS } from "@/lib/orders";
 import { formatPrice } from "@/lib/money";
+import { useCart } from "@/lib/useCart";
 import styles from "./cuenta.module.scss";
 
 const formatDate = (value) =>

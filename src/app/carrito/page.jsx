@@ -4,6 +4,7 @@ import Image from "next/image";
 import Link from "next/link";
 import { motion } from "framer-motion";
 import { parsePrice, formatPrice } from "@/lib/money";
+import { useCart } from "@/lib/useCart";
 import styles from "./carrito.module.scss";
 
 const Carrito = () => {

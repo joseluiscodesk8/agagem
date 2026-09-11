@@ -1,23 +1,12 @@
 "use client";
 
-import { useEffect } from "react";
 import Link from "next/link";
 import Image from "next/image";
+import { useCart } from "@/lib/useCart";
 import styles from "./CartAndSesion.module.scss";
 
 const CartAndSesion = () => {
-  const { cartCount, loggedInUser, setLoggedInUser } = useCart();
-
-  useEffect(() => {
-    try {
-      const storedSession = localStorage.getItem("session");
-      if (storedSession) {
-        setLoggedInUser(JSON.parse(storedSession));
-      }
-    } catch {
-      setLoggedInUser(null);
-    }
-  }, [setLoggedInUser]);
+  const { cartCount, loggedInUser } = useCart();
 
   const isAdmin = loggedInUser?.role === "admin";
 

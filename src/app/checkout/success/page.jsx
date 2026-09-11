@@ -4,6 +4,7 @@ import { Suspense, useEffect, useState } from "react";
 import { useSearchParams } from "next/navigation";
 import Link from "next/link";
 import { motion } from "framer-motion";
+import { useCart } from "@/lib/useCart";
 import styles from "./success.module.scss";
 
 function SuccessContent() {

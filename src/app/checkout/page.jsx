@@ -6,6 +6,7 @@ import Link from "next/link";
 import Image from "next/image";
 import { motion } from "framer-motion";
 import { parsePrice, formatPrice } from "@/lib/money";
+import { useCart } from "@/lib/useCart";
 import styles from "./checkout.module.scss";
 
 function CheckoutContent() {
