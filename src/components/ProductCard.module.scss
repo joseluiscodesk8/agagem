@@ -1,0 +1,292 @@
+@use "../styles/abstracts/mixins" as *;
+
+.card {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 4px;
+  padding-bottom: 12px;
+}
+
+.picture {
+  margin: auto;
+  width: 80%;
+  height: auto;
+  max-width: 280px;
+  position: relative;
+
+  @include desktop {
+    margin: 20px auto;
+  }
+
+  :global(img) {
+    border-radius: 15px;
+    box-shadow: 0 0 10px #000;
+    width: 100%;
+    height: auto;
+    position: relative;
+    z-index: 2;
+  }
+
+  &::before {
+    content: "";
+    position: absolute;
+    top: 2%;
+    width: 100%;
+    height: 77%;
+    border-radius: 15px;
+    background: rgba(112, 111, 111, 0.8);
+    z-index: 1;
+    animation: loading 2s linear infinite;
+    transition: animation 0.3s ease-in-out;
+  }
+}
+
+@keyframes loading {
+  0%,
+  100% {
+    opacity: 0.1;
+    background: rgba(112, 111, 111, 0.8);
+  }
+  50% {
+    opacity: 1;
+    background: rgba(44, 42, 42, 0.8);
+  }
+}
+
+.priceRow {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: 280px;
+  min-height: 60px;
+  margin: auto;
+  color: #462810;
+
+  @include tablet {
+    width: 230px;
+  }
+
+  .fieldBox {
+    flex: 1;
+  }
+}
+
+.priceRowCentered {
+  justify-content: center;
+}
+
+.cartBtn {
+  width: 120px;
+  height: 22px;
+  border-radius: 15px;
+  border-color: #c96513;
+  color: #462810;
+  background: transparent;
+  position: relative;
+  z-index: 10000;
+  transition: 0.5s ease-in-out;
+
+  @include tablet {
+    width: 100px;
+  }
+
+  &:hover {
+    background: #c96513;
+    color: #fff;
+  }
+
+  &:active {
+    scale: 0.8;
+  }
+
+  span {
+    font-size: 0.7rem;
+  }
+
+  &:disabled {
+    opacity: 0.7;
+    cursor: default;
+  }
+}
+
+.priceText {
+  font-size: 0.9rem;
+  margin: 0;
+}
+
+.fieldBox {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+  width: 280px;
+  margin: auto;
+
+  span {
+    font-size: 0.7rem;
+    font-weight: 600;
+    color: #7c5a36;
+  }
+
+  input,
+  textarea {
+    width: 100%;
+    box-sizing: border-box;
+    padding: 6px 8px;
+    border: 1px solid #d9b48f;
+    border-radius: 6px;
+    font-size: 0.85rem;
+    font-family: Arial, Helvetica, sans-serif;
+    color: #462810;
+    background: #fff;
+    resize: none;
+
+    &:focus {
+      outline: none;
+      border-color: #c96513;
+    }
+  }
+}
+
+.desc {
+  margin: auto;
+  width: 280px;
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: 0.9rem;
+  color: #462810;
+
+  @include tablet {
+    width: 240px;
+  }
+}
+
+.editToggle {
+  width: 280px;
+  padding: 4px 0;
+  border: 1px dashed #c96513;
+  border-radius: 6px;
+  background: transparent;
+  color: #c96513;
+  font-size: 0.75rem;
+  cursor: pointer;
+
+  &:hover {
+    background: #c96513;
+    color: #fff;
+  }
+}
+
+.actions {
+  display: flex;
+  gap: 10px;
+  width: 280px;
+  justify-content: center;
+}
+
+.saveBtn,
+.cancelBtn {
+  padding: 5px 16px;
+  border: none;
+  border-radius: 6px;
+  font-weight: 700;
+  cursor: pointer;
+
+  &:disabled {
+    opacity: 0.6;
+    cursor: default;
+  }
+}
+
+.saveBtn {
+  background: #c96513;
+  color: #fff;
+}
+
+.cancelBtn {
+  background: transparent;
+  border: 1px solid #c96513;
+  color: #c96513;
+}
+
+.fullscreen {
+  position: fixed;
+  inset: 0;
+  z-index: 2000;
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+  padding: 22px 18px 40px;
+  overflow-y: auto;
+  background: #fffaf3;
+  color: #462810;
+}
+
+.fullscreenHeader {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+
+  h3 {
+    margin: 0;
+    font-size: 1.05rem;
+  }
+}
+
+.closeBtn {
+  width: 30px;
+  height: 30px;
+  border: none;
+  border-radius: 15px;
+  background: #e8c9a8;
+  color: #462810;
+  font-size: 1.2rem;
+  line-height: 1;
+  cursor: pointer;
+
+  &:hover {
+    background: #c96513;
+    color: #fff;
+  }
+}
+
+.field {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+  font-size: 0.8rem;
+  font-weight: 600;
+
+  input,
+  textarea {
+    width: 100%;
+    box-sizing: border-box;
+    padding: 10px 12px;
+    border: 1px solid #d9b48f;
+    border-radius: 8px;
+    font-size: 0.95rem;
+    color: #462810;
+    background: #fff;
+    resize: vertical;
+
+    &:focus {
+      outline: none;
+      border-color: #c96513;
+    }
+  }
+}
+
+.fullscreenSave {
+  padding: 12px 0;
+  border: none;
+  border-radius: 8px;
+  background: #c96513;
+  color: #fff;
+  font-weight: 700;
+  font-size: 1rem;
+  cursor: pointer;
+
+  &:disabled {
+    opacity: 0.6;
+    cursor: default;
+  }
+}

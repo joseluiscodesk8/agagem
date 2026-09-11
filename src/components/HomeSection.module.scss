@@ -1,0 +1,28 @@
+@use "../styles/abstracts/mixins" as *;
+
+.home {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-evenly;
+  width: 90%;
+  max-width: 500px;
+  height: 320px;
+  margin: 20px auto;
+  color: #462810;
+
+  @include desktop {
+    position: absolute;
+    top: 0;
+    left: 330px;
+    width: 500px;
+    height: 250px;
+    transform: none;
+  }
+
+  & section {
+    display: flex;
+    height: 100%;
+    flex-direction: column;
+    justify-content: space-evenly;
+  }
+}

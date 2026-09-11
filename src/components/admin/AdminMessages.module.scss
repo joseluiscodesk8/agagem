@@ -1,0 +1,89 @@
+.empty {
+  color: #7c5a36;
+  font-size: 0.9rem;
+}
+
+.list {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.card {
+  padding: 12px;
+  border-radius: 10px;
+  background: #fff7ef;
+  border: 1px solid #e8c9a8;
+
+  &.resolved {
+    opacity: 0.65;
+  }
+
+  .error {
+    margin: 8px 0 0;
+    color: #a5301b;
+    font-size: 0.8rem;
+  }
+}
+
+.head {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 10px;
+  flex-wrap: wrap;
+}
+
+.orderRef {
+  margin-left: 8px;
+  padding: 1px 8px;
+  border-radius: 8px;
+  background: #f3cfb1;
+  color: #462810;
+  font-size: 0.75rem;
+}
+
+.meta {
+  display: block;
+  color: #7c5a36;
+  font-size: 0.8rem;
+}
+
+.resolveBtn {
+  padding: 4px 10px;
+  border: 1px solid #c96513;
+  border-radius: 8px;
+  background: transparent;
+  color: #c96513;
+  font-size: 0.8rem;
+  cursor: pointer;
+
+  &:hover {
+    background: #c96513;
+    color: #fff;
+  }
+
+  &:disabled {
+    opacity: 0.6;
+    cursor: default;
+  }
+}
+
+.resolvedTag {
+  padding: 2px 8px;
+  border-radius: 8px;
+  background: #4a8c3f;
+  color: #fff;
+  font-size: 0.75rem;
+  font-weight: 700;
+}
+
+.text {
+  margin: 8px 0 0;
+  color: #462810;
+  font-size: 0.85rem;
+  white-space: pre-wrap;
+}

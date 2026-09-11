@@ -1,0 +1,91 @@
+@use "../styles/abstracts/mixins" as *;
+
+.container {
+  width: 100%;
+  height: 40px;
+  position: fixed;
+  z-index: 1000;
+
+  @include desktop {
+    pointer-events: none;
+  }
+}
+
+.cart {
+  position: relative;
+  display: grid;
+  place-content: center;
+  margin-left: auto;
+  transform: translate(0, 10px);
+  color: #462810;
+  font-size: 1.2rem;
+  width: 40px;
+  height: 40px;
+  background: #f3cfb1;
+  border-radius: 20px;
+
+  @include desktop {
+    position: absolute;
+    top: 10px;
+    right: 12px;
+    margin: 0;
+    transform: none;
+    pointer-events: auto;
+  }
+
+  &:active {
+    scale: 0.8;
+  }
+}
+
+.badge {
+  display: grid;
+  place-content: center;
+  position: absolute;
+  transform: translate(25px, -5px);
+  color: #fff;
+  width: 20px;
+  height: 20px;
+  border-radius: 10px;
+  background: #c96513;
+
+  & span {
+    font-size: 0.8rem;
+  }
+}
+
+.login {
+  position: absolute;
+  top: 12px;
+  right: 56px;
+  color: #462810;
+  font-weight: 700;
+  pointer-events: auto;
+
+  @include desktop {
+    top: 40px;
+    right: auto;
+    left: 150px;
+    transform: translateX(-50%);
+  }
+}
+
+.adminLink {
+  margin-right: 10px;
+  padding: 1px 8px;
+  border-radius: 8px;
+  background: #c96513;
+  color: #fff;
+  font-size: 0.8rem;
+  text-transform: uppercase;
+}
+
+.accountLink {
+  margin-right: 10px;
+  padding: 1px 8px;
+  border-radius: 8px;
+  background: #f3cfb1;
+  color: #462810;
+  font-size: 0.8rem;
+  text-transform: uppercase;
+}

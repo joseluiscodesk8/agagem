@@ -1,0 +1,39 @@
+"use client";
+
+import { motion } from "framer-motion";
+import styles from "./HomeSection.module.scss";
+
+const HomeSection = () => {
+  const itemVariants = {
+    hidden: { opacity: 0 },
+    visible: { opacity: 1 },
+  };
+
+  return (
+    <motion.main
+      className={styles.home}
+      initial="hidden"
+      animate="visible"
+      variants={itemVariants}
+      transition={{ duration: 0.5 }}
+    >
+      <section>
+        <h3>Bienvenidos a AGAGEM</h3>
+        <p>
+          Somos una empresa creada en 2023 por Astrid Gómez y Genesis Miranda,
+          dos mujeres amantes de los diseños de bisutería y la resina.
+        </p>
+        <h3>Productos</h3>
+        <p>
+          En nuestro portal, puedes encontrar una variedad de productos de
+          bisutería y resina. Todo puede ser personalizado según tus gustos.
+          En la resina, puedes escoger colores, incrustaciones y más. En las
+          pulseras, pregunta por los colores disponibles; los dijes pueden
+          variar según el inventario.
+        </p>
+      </section>
+    </motion.main>
+  );
+};
+
+export default HomeSection;

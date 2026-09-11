@@ -1,0 +1,141 @@
+@use "../../../styles/abstracts/mixins" as *;
+
+.page {
+  padding: 90px 20px 20px;
+
+  @include desktop {
+    position: absolute;
+    top: 0;
+    left: 330px;
+    width: calc(100vw - 330px);
+    padding: 24px 24px 40px;
+  }
+
+  h2 {
+    color: #462810;
+    margin: 0 0 6px;
+  }
+
+  .hint {
+    color: #7c5a36;
+    font-size: 0.9rem;
+    margin: 0 0 18px;
+  }
+}
+
+.section {
+  margin-bottom: 28px;
+
+  > h3 {
+    color: #c96513;
+    margin: 0 0 10px;
+    text-transform: uppercase;
+    font-size: 0.95rem;
+    letter-spacing: 0.4px;
+  }
+}
+
+.tableWrap {
+  overflow-x: auto;
+  border-radius: 10px;
+  border: 1px solid #e8c9a8;
+  background: #fff7ef;
+}
+
+.table {
+  width: 100%;
+  border-collapse: collapse;
+  font-size: 0.85rem;
+  color: #462810;
+  min-width: 560px;
+
+  th,
+  td {
+    text-align: left;
+    padding: 8px 10px;
+    border-bottom: 1px solid #e8c9a8;
+  }
+
+  th {
+    background: #f3cfb1;
+    font-size: 0.78rem;
+    text-transform: uppercase;
+    color: #462810;
+  }
+
+  tr:last-child td {
+    border-bottom: none;
+  }
+
+  .adminTag {
+    margin-left: 8px;
+    padding: 1px 8px;
+    border-radius: 8px;
+    background: #c96513;
+    color: #fff;
+    font-size: 0.7rem;
+    text-transform: uppercase;
+  }
+
+  .hasOrders {
+    font-weight: 700;
+    color: #1e7a34;
+  }
+}
+
+.group {
+  margin-bottom: 18px;
+
+  h4 {
+    color: #c96513;
+    text-transform: capitalize;
+    margin: 0 0 8px;
+  }
+
+  ul {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(240px, 1fr));
+    gap: 8px;
+  }
+
+  li {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    padding: 8px;
+    border-radius: 8px;
+    background: #fff7ef;
+    border: 1px solid #e8c9a8;
+
+    img {
+      border-radius: 6px;
+      object-fit: cover;
+    }
+
+    span {
+      color: #462810;
+      font-size: 0.85rem;
+    }
+
+    .price {
+      font-weight: 700;
+    }
+  }
+
+  .edit {
+    margin-left: auto;
+    padding: 3px 10px;
+    border-radius: 6px;
+    background: #c96513;
+    color: #fff;
+    font-size: 0.8rem;
+    text-decoration: none;
+
+    &:hover {
+      background: #a14f0c;
+    }
+  }
+}

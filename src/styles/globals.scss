@@ -1,0 +1,36 @@
+@use "./abstracts/mixins" as *;
+
+* {
+  box-sizing: border-box;
+  padding: 0;
+  margin: 0;
+}
+
+body {
+  background: #fcebdd;
+  overflow-x: hidden;
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+picture {
+  display: flex;
+}
+
+.leftColumn {
+  display: contents;
+
+  @include desktop {
+    display: block;
+    position: absolute;
+    top: 180px;
+    left: 0;
+    width: 250px;
+    height: 710px;
+    z-index: 900;
+    box-shadow: 10px 25px 15px #f3caaa;
+  }
+}

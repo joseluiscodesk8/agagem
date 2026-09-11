@@ -1,0 +1,33 @@
+@mixin input-container($input-bg: transparent, $label-border: none) {
+  display: grid;
+  place-content: center;
+  width: 155px;
+  position: relative;
+
+  & label {
+    position: absolute;
+    transform: translate(2px, 6px);
+    pointer-events: none;
+    color: #000;
+    transition: all 0.5s ease;
+    border-bottom: $label-border;
+  }
+
+  & input {
+    width: 160px;
+    height: 30px;
+    border-radius: 5px;
+    border: none;
+    background: $input-bg;
+    transition: 0.5s ease-in-out;
+  }
+
+  & input:focus {
+    background: #fff;
+  }
+}
+
+@mixin label-up {
+  transform: translate(0, -17px);
+  font-size: 0.8rem;
+}

@@ -1,5 +1,6 @@
-import React, { createContext, useContext, useState, useEffect } from 'react';
+"use client";
 
+import { createContext, useContext, useState, useEffect, useCallback } from "react";
 
 const CartContext = createContext();
 
@@ -16,47 +17,70 @@ export const CartProvider = ({ children }) => {
   const [loggedInUser, setLoggedInUser] = useState(null);
 
   useEffect(() => {
-    // Recuperar elementos del carrito desde localStorage al cargar la página
-    const storedCartItems = localStorage.getItem('cartItems');
-    if (storedCartItems) {
-      setCartItems(JSON.parse(storedCartItems));
+    try {
+      const storedCartItems = localStorage.getItem("cartItems");
+      if (storedCartItems) {
+        setCartItems(JSON.parse(storedCartItems));
+      }
+    } catch {
+      setCartItems([]);
     }
   }, []);
 
-  
-
-  const addToCart = (item) => {
-
-    const existingItemIndex = cartItems.findIndex(
-      (cartItem) => cartItem.id === item.id && cartItem.origin === item.origin
-    );
-
-    if (existingItemIndex !== -1) {
-      const updatedCart = [...cartItems];
-      updatedCart[existingItemIndex].quantity += item.quantity;
-      setCartItems(updatedCart);
-      localStorage.setItem('cartItems', JSON.stringify(updatedCart));
-    } else {
-      const updatedCart = [...cartItems, item];
-      setCartItems(updatedCart);
-      localStorage.setItem('cartItems', JSON.stringify(updatedCart));
+  useEffect(() => {
+    try {
+      const storedSession = localStorage.getItem("session");
+      if (storedSession) {
+        setLoggedInUser(JSON.parse(storedSession));
+      }
+    } catch {
+      setLoggedInUser(null);
     }
-  };
+  }, []);
 
-  const removeFromCart = (itemId) => {
-    const updatedCart = cartItems.filter((item) => !(item.id === itemId));
-    setCartItems(updatedCart);
-    localStorage.setItem('cartItems', JSON.stringify(updatedCart))
-  };
-  
+  const addToCart = useCallback((item) => {
+    setCartItems((prev) => {
+      const next = [...prev];
+      const existingIndex = next.findIndex(
+        (cartItem) => cartItem.id === item.id && cartItem.origin === item.origin
+      );
 
+      if (existingIndex !== -1) {
+        next[existingIndex].quantity += item.quantity;
+      } else {
+        next.push(item);
+      }
 
-  const cartCount = cartItems.length;
+      localStorage.setItem("cartItems", JSON.stringify(next));
+      return next;
+    });
+  }, []);
+
+  const removeFromCart = useCallback((itemId, origin) => {
+    setCartItems((prev) => {
+      const next = prev.filter(
+        (item) => !(item.id === itemId && item.origin === origin)
+      );
+      localStorage.setItem("cartItems", JSON.stringify(next));
+      return next;
+    });
+  }, []);
+
+  const clearCart = useCallback(() => {
+    setCartItems([]);
+    localStorage.removeItem("cartItems");
+  }, []);
+
+  const cartCount = cartItems.reduce(
+    (sum, item) => sum + (item.quantity ?? 1),
+    0
+  );
 
   return (
-    <CartContext.Provider value={{ cartItems, setCartItems, addToCart, removeFromCart, cartCount, loggedInUser, setLoggedInUser }}>
+    <CartContext.Provider
+      value={{ cartItems, addToCart, removeFromCart, clearCart, cartCount, loggedInUser, setLoggedInUser }}
+    >
       {children}
     </CartContext.Provider>
   );
-  
-}
+};

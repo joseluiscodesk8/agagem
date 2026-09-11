@@ -1,0 +1,27 @@
+@use "../styles/abstracts/mixins" as *;
+
+.grid {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  height: 100%;
+  margin: 20px auto;
+  position: relative;
+
+  @include desktop {
+    margin: 0;
+    top: 0;
+    left: 300px;
+    width: calc(100vw - 320px);
+    height: calc(100vh - 180px);
+    position: absolute;
+    overflow-y: scroll;
+    scroll-behavior: smooth;
+  }
+
+  @include tablet {
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: center;
+  }
+}
