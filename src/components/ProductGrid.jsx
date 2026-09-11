@@ -2,12 +2,10 @@
 
 import { useEffect, useState } from "react";
 import { motion } from "framer-motion";
-import { useCart } from "@/context/CartContext";
 import ProductCard from "./ProductCard";
 import styles from "./ProductGrid.module.scss";
 
 const ProductGrid = ({ products, origin, admin = false }) => {
-  const { addToCart, cartItems } = useCart();
   const [items, setItems] = useState(products);
 
   useEffect(() => {
